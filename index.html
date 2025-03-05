@@ -640,9 +640,7 @@
   <!-- =======================================
      PLAYGROUND SECTION
 ======================================= -->
-  <!-- =======================================
-       PLAYGROUND SECTION
-  ======================================== -->
+
   <section id="playground" style="padding: 2rem;">
     <h2 class="section-title">Playground</h2>
     <p>
@@ -651,23 +649,23 @@
 
     <!-- Editor & Preview Container -->
     <div id="playground-container" style="display: flex; gap: 1rem; position: relative;">
-      <!-- CodeJar Editor (we use a contenteditable div instead of textarea) -->
-      <div id="playground-editor" contenteditable="true" style="width: 50%; height: 300px; padding: 0.5rem; border: 1px solid #ddd; overflow: auto; font-family: monospace; font-size: 0.9rem; background: #f8f8f8;">
-<!-- Try out some sample HTML with utility classes -->
-<div class="p-4 bg-gray-100 rounded mb-4">
-  <h3 class="text-xl font-bold">Hello, Utilities!</h3>
-  <p class="text-base leading-normal">
-    This is a playground. Edit the HTML to see changes!
-  </p>
-</div>
+      <!-- CodeJar Editor (contenteditable div) -->
+      <div id="playground-editor" contenteditable="true"
+           style="width: 50%; height: 300px; padding: 0.5rem; border: 1px solid #ddd; overflow: auto; font-family: monospace; font-size: 0.9rem; background: #f8f8f8; white-space: pre-wrap; outline: none;">
+&lt;!-- Try out some sample HTML with utility classes --&gt;
+&lt;div class="p-4 bg-gray-100 rounded mb-4"&gt;
+  &lt;h3 class="text-xl font-bold"&gt;Hello, Utilities!&lt;/h3&gt;
+  &lt;p class="text-base leading-normal"&gt;This is a playground. Edit the HTML to see changes!&lt;/p&gt;
+&lt;/div&gt;
       </div>
 
       <!-- Preview Iframe -->
-      <iframe id="playground-preview" style="width: 50%; height: 300px; border: 1px solid #ddd;"></iframe>
+      <iframe id="playground-preview"
+              style="width: 50%; height: 300px; border: 1px solid #ddd;"></iframe>
     </div>
 
     <!-- Autocomplete Popup -->
-    <div id="autocomplete-popup" class="autocomplete-popup" style="display: none; position: absolute;"></div>
+    <div id="autocomplete-popup" class="autocomplete-popup" style="display: none; position: absolute; background: white; border: 1px solid #bbb; border-radius: 4px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); font-size: 0.9rem; font-family: sans-serif; max-height: 150px; overflow: auto;"></div>
   </section>
 
   <!-- =======================================
@@ -715,26 +713,27 @@
 
   <!-- =======================================
        INCLUDE CodeJar (lightweight editor)
-  ======================================== -->
+  ======================================= -->
   <script src="https://unpkg.com/codejar@3.6.0/codejar.js"></script>
 
   <!-- =======================================
        PLAYGROUND SCRIPT: CodeJar + Autocomplete
-  ======================================== -->
+  ======================================= -->
   <script>
-    // A no-op highlighter (for now)
+    // A no-op highlighter (optional: add your own syntax highlight)
     function highlightCode(editor) {
-      // Optionally add simple highlighting logic here
+      // You could integrate a simple highlighter if desired.
+      // For now, we'll leave it as a no-op.
     }
 
-    // Initialize CodeJar on our editor element
+    // Initialize CodeJar on our editor element.
     const editorEl = document.getElementById("playground-editor");
     const jar = CodeJar(editorEl, highlightCode, { tab: "  " });
 
-    // Save a reference to our autocomplete popup element
+    // Reference to the autocomplete popup element.
     const autocompletePopup = document.getElementById("autocomplete-popup");
 
-    // Update the preview whenever CodeJar content updates.
+    // Update preview and check for autocomplete on code changes.
     jar.onUpdate(() => {
       updatePlayground();
       handleAutocomplete();
@@ -757,27 +756,28 @@
       iframe.srcdoc = iframeContent;
     }
 
-    // Autocomplete functionality: detect if caret is inside a class attribute and show suggestions.
+    // Autocomplete: Check if caret is inside a class attribute.
     function handleAutocomplete() {
       const code = jar.toString();
       const caret = jar.save(); // { start, end }
       const beforeCaret = code.substring(0, caret.start);
 
-      // Check if we are inside a class attribute: find last occurrence of 'class="'
-      const classIndex = beforeCaret.lastIndexOf('class="');
-      if (classIndex === -1) {
+      // Determine if we are inside a class attribute.
+      const classAttrIndex = beforeCaret.lastIndexOf('class="');
+      if (classAttrIndex === -1) {
         hideAutocomplete();
         return;
       }
-      const openingIndex = classIndex + 7; // after 'class="'
-      // Check if there's a closing quote before caret.
-      const closingQuote = code.indexOf('"', openingIndex);
-      if (closingQuote !== -1 && caret.start > closingQuote) {
+      const classContentStart = classAttrIndex + 7;
+      // Check if a closing quote exists before caret; if so, we're outside.
+      const closingQuoteIndex = code.indexOf('"', classContentStart);
+      if (closingQuoteIndex !== -1 && caret.start > closingQuoteIndex) {
         hideAutocomplete();
         return;
       }
-      // We are inside a class attribute; extract current content from opening to caret.
-      const classContent = beforeCaret.substring(openingIndex);
+
+      // Extract current class attribute content up to caret.
+      const classContent = beforeCaret.substring(classContentStart);
       // Get the current word (split by whitespace)
       const words = classContent.split(/\s+/);
       const currentPartial = words[words.length - 1];
@@ -785,7 +785,7 @@
         hideAutocomplete();
         return;
       }
-      // Filter our utility classes based on the current partial.
+      // Filter utility classes based on current partial.
       const suggestions = UTILITY_CLASSES.filter(c => c.startsWith(currentPartial));
       if (suggestions.length === 0) {
         hideAutocomplete();
@@ -802,7 +802,6 @@
         item.onclick = () => applySuggestion(suggestion);
         autocompletePopup.appendChild(item);
       });
-      // Position the popup near the editor.
       positionPopup();
       autocompletePopup.style.display = "block";
     }
@@ -811,46 +810,47 @@
       autocompletePopup.style.display = "none";
     }
 
-    function positionPopup() {
-      // For a simple approach, position the popup at the bottom left of the editor.
-      const rect = editorEl.getBoundingClientRect();
-      autocompletePopup.style.left = rect.left + "px";
-      autocompletePopup.style.top = (rect.bottom - 30) + "px";
-    }
-
-    // Replace the current partial class in the class attribute with the selected suggestion.
+    // Replace the current partial word in the class attribute with the selected suggestion.
     function applySuggestion(suggestion) {
       const code = jar.toString();
       const caret = jar.save();
       const beforeCaret = code.substring(0, caret.start);
       const afterCaret = code.substring(caret.start);
-      const classIndex = beforeCaret.lastIndexOf('class="');
-      if (classIndex === -1) return;
-      const openingIndex = classIndex + 7;
-      const classContent = beforeCaret.substring(openingIndex);
+
+      const classAttrIndex = beforeCaret.lastIndexOf('class="');
+      if (classAttrIndex === -1) return;
+      const classContentStart = classAttrIndex + 7;
+      const classContent = beforeCaret.substring(classContentStart);
       // Replace the last word in classContent with the suggestion.
       const words = classContent.split(/\s+/);
       words[words.length - 1] = suggestion;
       const newClassContent = words.join(" ");
-      const newBeforeCaret = beforeCaret.substring(0, openingIndex) + newClassContent;
+      const newBeforeCaret = beforeCaret.substring(0, classContentStart) + newClassContent;
       const newCode = newBeforeCaret + afterCaret;
       jar.updateCode(newCode);
-      // Place the caret after the inserted suggestion.
       jar.restore({ start: newBeforeCaret.length, end: newBeforeCaret.length });
       hideAutocomplete();
       updatePlayground();
     }
 
-    // Initialize playground on page load.
-    document.addEventListener("DOMContentLoaded", () => {
-      updatePlayground();
-    });
+    function positionPopup() {
+      // Position popup relative to the editor.
+      // For simplicity, we position it at the bottom-left of the editor.
+      const rect = editorEl.getBoundingClientRect();
+      autocompletePopup.style.left = rect.left + "px";
+      autocompletePopup.style.top = (rect.bottom - 30) + "px";
+    }
 
-    // Hide autocomplete if clicking outside the editor.
+    // Hide autocomplete if clicking outside editor or popup.
     document.addEventListener("click", (e) => {
       if (!editorEl.contains(e.target) && !autocompletePopup.contains(e.target)) {
         hideAutocomplete();
       }
+    });
+
+    // Initialize the playground on page load.
+    document.addEventListener("DOMContentLoaded", () => {
+      updatePlayground();
     });
   </script>
 
