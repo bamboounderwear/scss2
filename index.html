@@ -637,5 +637,70 @@
     </p>
   </section>
 
+  <!-- =======================================
+     PLAYGROUND SECTION
+======================================= -->
+<section id="playground" style="padding: 2rem;">
+  <h2 class="section-title">Playground</h2>
+  <p>
+    Type or paste HTML below to instantly preview it
+    with our compiled utility-first CSS in effect.
+  </p>
+
+  <div style="display: flex; gap: 1rem;">
+    <!-- Editor -->
+    <textarea
+      id="playground-editor"
+      style="width: 50%; height: 300px; padding: 0.5rem;"
+      oninput="updatePlayground()"
+    >
+<!-- Try out some sample HTML with utility classes -->
+<div class="p-4 bg-gray-100 rounded mb-4">
+  <h3 class="text-xl font-bold">Hello, Utilities!</h3>
+  <p class="text-base leading-normal">
+    This is a playground. Edit the HTML to see changes!
+  </p>
+</div>
+    </textarea>
+
+    <!-- Preview -->
+    <iframe
+      id="playground-preview"
+      style="width: 50%; height: 300px; border: 1px solid #ddd;"
+    ></iframe>
+  </div>
+</section>
+
+<script>
+  function updatePlayground() {
+    const code = document.getElementById("playground-editor").value;
+    const iframe = document.getElementById("playground-preview");
+
+    // Build a minimal HTML document with our compiled CSS
+    const iframeContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Link to your compiled utility CSS -->
+  <link rel="stylesheet" href="compiled.css" />
+</head>
+<body style="margin: 0; padding: 1rem;">
+  ${code}
+</body>
+</html>
+    `;
+
+    // Set the iframe's srcdoc to our generated HTML
+    iframe.srcdoc = iframeContent;
+  }
+
+  // Initialize the playground on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    updatePlayground(); // So it loads the default textarea content
+  });
+</script>
+
+
 </body>
 </html>
