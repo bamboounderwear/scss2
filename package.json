@@ -4,10 +4,12 @@
     "description": "A minimal boilerplate project to compile SCSS into CSS for in-browser deployment on Netlify.",
     "scripts": {
       "build": "sass scss/style.scss css/style.css --no-source-map",
+      "start": "servor --reload",
       "watch": "sass --watch scss/style.scss:css/style.css --no-source-map"
     },
     "devDependencies": {
-      "sass": "^1.50.0"
+      "sass": "^1.50.0",
+      "servor": "^4.0.2"
     }
   }
   
