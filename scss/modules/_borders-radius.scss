@@ -4,32 +4,63 @@
  * ---------------------------------------------- */
 
 /* Border Widths */
-.border { border-width: 1px; }
-.border-2 { border-width: 2px; }
-.border-4 { border-width: 4px; }
-/* etc. */
+.border {
+  border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-4 {
+  border-width: 4px;
+}
+/* Extend with additional widths as required */
 
 /* Border Color (using color tokens as examples) */
-.border-color-1 { border-color: var(--color-1); }
-.border-color-1-light { border-color: var(--color-1-light); }
-.border-color-1-dark { border-color: var(--color-1-dark); }
-/* etc. for color-2, color-3, ... color-11 */
+.border-color-1 {
+  border-color: var(--color-1);
+}
+.border-color-1-light {
+  border-color: var(--color-1-light);
+}
+.border-color-1-dark {
+  border-color: var(--color-1-dark);
+}
+/* Similarly for color-2, color-3, ... color-11 */
+/* Example for color-2:
+.border-color-2 { border-color: var(--color-2); }
+.border-color-2-light { border-color: var(--color-2-light); }
+.border-color-2-dark { border-color: var(--color-2-dark); }
+... */
 
 /* Border Styles */
-.border-solid { border-style: solid; }
-.border-dashed { border-style: dashed; }
-.border-dotted { border-style: dotted; }
+.border-solid {
+  border-style: solid;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-dotted {
+  border-style: dotted;
+}
 
 /* Border Radius */
-.rounded { border-radius: 0.25rem; }
-.rounded-md { border-radius: 0.375rem; }
-.rounded-lg { border-radius: 0.5rem; }
-.rounded-full { border-radius: 9999px; }
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
 
-/* Ring (outline) for focus states (example) */
+/* Ring (outline) for focus states */
 .ring-2 {
   box-shadow: 0 0 0 2px currentColor;
 }
 .ring-primary {
-  box-shadow: 0 0 0 2px var(--color-1); /* or whichever color token you want */
+  box-shadow: 0 0 0 2px var(--color-1); /* Use desired color token */
 }

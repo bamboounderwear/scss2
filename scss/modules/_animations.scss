@@ -1,56 +1,91 @@
 /* -------------------------------------------------- *
  * MODULE 15: ANIMATIONS                              *
- * Prebuilt .animate-spin, .animate-pulse, keyframes  *
- * Durations, iteration counts, etc.                  *
+ * Prebuilt animations: spin, pulse, ping, bounce,      *
+ * durations, iteration counts, etc.                  *
  * -------------------------------------------------- */
 
 /* Keyframes */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+  100% {
+    transform: rotate(360deg);
   }
-  @keyframes ping {
-    75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
   }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10%); }
+  50% {
+    opacity: 0.5;
   }
-  
-  /* Prebuilt Animations */
-  .animate-spin {
-    animation: spin 1s linear infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
   }
-  .animate-pulse {
-    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  .animate-ping {
-    animation: ping 1s cubic-bezier(0,0,0.2,1) infinite;
+  50% {
+    transform: translateY(-10%);
   }
-  .animate-bounce {
-    animation: bounce 1s infinite;
+}
+
+/* Prebuilt Animation Utilities */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Animation Duration Utilities */
+.anim-duration-500 {
+  animation-duration: 500ms;
+}
+
+.anim-duration-1000 {
+  animation-duration: 1000ms;
+}
+
+/* Iteration Count Utilities */
+.animate-once {
+  animation-iteration-count: 1;
+}
+
+.animate-infinite {
+  animation-iteration-count: infinite;
+}
+
+/* Example Custom Animation (Fade In/Out) */
+/*
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  /* Animation Durations */
-  .anim-duration-500 { animation-duration: 500ms; }
-  .anim-duration-1000 { animation-duration: 1000ms; }
-  /* etc. */
-  
-  /* Iteration Counts */
-  .animate-once { animation-iteration-count: 1; }
-  .animate-infinite { animation-iteration-count: infinite; }
-  
-  /* Example custom animations (fade in/out) if needed
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
   }
-  .animate-fade-in {
-    animation: fadeIn 500ms ease-in forwards;
-  }
-  */
-  
+}
+
+.animate-fade-in {
+  animation: fadeIn 500ms ease-in forwards;
+}
+*/
