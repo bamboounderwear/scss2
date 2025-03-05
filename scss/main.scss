@@ -1,23 +1,26 @@
 /* main.scss */
 
-/* 1) Import variables/tokens (in the same folder as main.scss) */
-@import "variables-tokens";
+/* Import tokens/variables (located in /scss) */
+@use "variables-tokens";
 
-/* 2) Import modules from the /modules folder */
-@import "modules/reset-base";
-@import "modules/typography";
-@import "modules/layout";
-@import "modules/flex";
-@import "modules/grid";
-@import "modules/spacing";
-@import "modules/sizing";
-@import "modules/positioning";
-@import "modules/borders-radius";
-@import "modules/backgrounds";
-@import "modules/effects";
-@import "modules/transforms";
-@import "modules/transitions";
-@import "modules/animations";
-@import "modules/forms";
-@import "modules/tables";
-@import "modules/utilities-responsive";
+/* Import modules from the /scss/modules folder. 
+   If you want to include the styles globally without a namespace,
+   you can use `as *` (or rename the module to not use underscores).
+   For example: */
+@use "modules/reset-base" as *;
+@use "modules/typography" as *;
+@use "modules/layout" as *;
+@use "modules/flex" as *;
+@use "modules/grid" as *;
+@use "modules/spacing" as *;
+@use "modules/sizing" as *;
+@use "modules/positioning" as *;
+@use "modules/borders-radius" as *;
+@use "modules/backgrounds" as *;
+@use "modules/effects" as *;
+@use "modules/transforms" as *;
+@use "modules/transitions" as *;
+@use "modules/animations" as *;
+@use "modules/forms" as *;
+@use "modules/tables" as *;
+@use "modules/utilities-responsive" as *;
