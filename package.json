@@ -1,0 +1,13 @@
+{
+    "name": "minimal-scss-netlify",
+    "version": "1.0.0",
+    "description": "A minimal boilerplate project to compile SCSS into CSS for in-browser deployment on Netlify.",
+    "scripts": {
+      "build": "sass scss/style.scss css/style.css --no-source-map",
+      "watch": "sass --watch scss/style.scss:css/style.css --no-source-map"
+    },
+    "devDependencies": {
+      "sass": "^1.50.0"
+    }
+  }
+  

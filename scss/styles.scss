@@ -1,9 +1,16 @@
-@import '../_abstracts/alignments';
-@import '../_abstracts/display';
-@import '../_abstracts/spacing';
-@import '../_abstracts/text';
+// style.scss
+// Main SCSS file that imports placeholder modules
 
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/base";
+@import "modules/layout";
+@import "modules/components";
 
-.scss-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+// Global styles can follow here
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
