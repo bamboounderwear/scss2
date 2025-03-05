@@ -640,20 +640,19 @@
   <!-- =======================================
      PLAYGROUND SECTION
 ======================================= -->
-<section id="playground" style="padding: 2rem;">
-  <h2 class="section-title">Playground</h2>
-  <p>
-    Type or paste HTML below to instantly preview it
-    with our compiled utility-first CSS in effect.
-  </p>
+  <!-- =======================================
+       PLAYGROUND SECTION
+  ======================================== -->
+  <section id="playground" style="padding: 2rem;">
+    <h2 class="section-title">Playground</h2>
+    <p>
+      Type or paste HTML below to instantly preview it with our compiled utility-first CSS in effect.
+    </p>
 
-  <div style="display: flex; gap: 1rem;">
-    <!-- Editor -->
-    <textarea
-      id="playground-editor"
-      style="width: 50%; height: 300px; padding: 0.5rem;"
-      oninput="updatePlayground()"
-    >
+    <!-- Editor & Preview Container -->
+    <div id="playground-container" style="display: flex; gap: 1rem; position: relative;">
+      <!-- CodeJar Editor (we use a contenteditable div instead of textarea) -->
+      <div id="playground-editor" contenteditable="true" style="width: 50%; height: 300px; padding: 0.5rem; border: 1px solid #ddd; overflow: auto; font-family: monospace; font-size: 0.9rem; background: #f8f8f8;">
 <!-- Try out some sample HTML with utility classes -->
 <div class="p-4 bg-gray-100 rounded mb-4">
   <h3 class="text-xl font-bold">Hello, Utilities!</h3>
@@ -661,45 +660,199 @@
     This is a playground. Edit the HTML to see changes!
   </p>
 </div>
-    </textarea>
+      </div>
 
-    <!-- Preview -->
-    <iframe
-      id="playground-preview"
-      style="width: 50%; height: 300px; border: 1px solid #ddd;"
-    ></iframe>
-  </div>
-</section>
+      <!-- Preview Iframe -->
+      <iframe id="playground-preview" style="width: 50%; height: 300px; border: 1px solid #ddd;"></iframe>
+    </div>
 
-<script>
-  function updatePlayground() {
-    const code = document.getElementById("playground-editor").value;
-    const iframe = document.getElementById("playground-preview");
+    <!-- Autocomplete Popup -->
+    <div id="autocomplete-popup" class="autocomplete-popup" style="display: none; position: absolute;"></div>
+  </section>
 
-    // Build a minimal HTML document with our compiled CSS
-    const iframeContent = `
+  <!-- =======================================
+       UTILITY CLASSES LIST (for autocomplete)
+  ======================================== -->
+  <script>
+    // Define a list of available utility classes.
+    const UTILITY_CLASSES = [
+      "m-1","m-2","m-3","m-4","m-5","m-6","m-7","m-8","m-9","m-10",
+      "p-1","p-2","p-3","p-4","p-5","p-6","p-7","p-8","p-9","p-10",
+      "mx-1","mx-2","mx-3","my-1","my-2",
+      "-m-1","-m-2","ml-auto","mr-auto",
+      "w-1/2","w-1/3","w-4","w-8","h-screen","min-w-0","max-w-full","w-fit","h-fit",
+      "text-xs","text-sm","text-base","text-lg","text-xl","text-2xl","text-3xl","text-4xl","text-5xl","text-6xl","text-7xl","text-8xl","text-9xl",
+      "leading-none","leading-tight","leading-snug","leading-normal","leading-relaxed","leading-loose",
+      "uppercase","lowercase","capitalize",
+      "tracking-tight","tracking-normal","tracking-wide",
+      "text-left","text-center","text-right","text-justify",
+      "font-sans","font-serif","font-mono",
+      "font-thin","font-extralight","font-light","font-normal","font-medium","font-semibold","font-bold","font-extrabold","font-black",
+      "bg-color-1","bg-color-1-light","bg-color-1-dark",
+      "bg-color-2","bg-color-2-light","bg-color-2-dark",
+      "bg-gray-100","bg-gray-200","bg-gray-300","bg-gray-400","bg-gray-500","bg-gray-600","bg-gray-700","bg-gray-800","bg-gray-900",
+      "text-color-1","text-color-1-light","text-color-1-dark",
+      "border","border-2","border-4",
+      "border-solid","border-dotted",
+      "rounded","rounded-full",
+      "ring-2","ring-primary",
+      "shadow-sm","shadow-lg",
+      "opacity-50","opacity-75",
+      "flex","flex-row","flex-col","flex-wrap","flex-nowrap",
+      "items-center","justify-between",
+      "grid","col-6","sm:col-4","gap-4",
+      "relative","absolute","fixed",
+      "top-0","right-0",
+      "z-50","z-9999",
+      "bg-cover","bg-contain","bg-no-repeat","bg-repeat-x",
+      "transition-all","duration-300","delay-150",
+      "translate-x-1/2","rotate-45","scale-95",
+      "animate-spin","animate-pulse","animate-bounce",
+      "form-input","form-select",
+      "table-auto","table-fixed","table-bordered","table-striped","table-hover"
+    ];
+  </script>
+
+  <!-- =======================================
+       INCLUDE CodeJar (lightweight editor)
+  ======================================== -->
+  <script src="https://unpkg.com/codejar@3.6.0/codejar.js"></script>
+
+  <!-- =======================================
+       PLAYGROUND SCRIPT: CodeJar + Autocomplete
+  ======================================== -->
+  <script>
+    // A no-op highlighter (for now)
+    function highlightCode(editor) {
+      // Optionally add simple highlighting logic here
+    }
+
+    // Initialize CodeJar on our editor element
+    const editorEl = document.getElementById("playground-editor");
+    const jar = CodeJar(editorEl, highlightCode, { tab: "  " });
+
+    // Save a reference to our autocomplete popup element
+    const autocompletePopup = document.getElementById("autocomplete-popup");
+
+    // Update the preview whenever CodeJar content updates.
+    jar.onUpdate(() => {
+      updatePlayground();
+      handleAutocomplete();
+    });
+
+    function updatePlayground() {
+      const code = jar.toString();
+      const iframe = document.getElementById("playground-preview");
+      const iframeContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Link to your compiled utility CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body style="margin: 0; padding: 1rem;">
   ${code}
 </body>
-</html>
-    `;
+</html>`;
+      iframe.srcdoc = iframeContent;
+    }
 
-    // Set the iframe's srcdoc to our generated HTML
-    iframe.srcdoc = iframeContent;
-  }
+    // Autocomplete functionality: detect if caret is inside a class attribute and show suggestions.
+    function handleAutocomplete() {
+      const code = jar.toString();
+      const caret = jar.save(); // { start, end }
+      const beforeCaret = code.substring(0, caret.start);
 
-  // Initialize the playground on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    updatePlayground(); // So it loads the default textarea content
-  });
-</script>
+      // Check if we are inside a class attribute: find last occurrence of 'class="'
+      const classIndex = beforeCaret.lastIndexOf('class="');
+      if (classIndex === -1) {
+        hideAutocomplete();
+        return;
+      }
+      const openingIndex = classIndex + 7; // after 'class="'
+      // Check if there's a closing quote before caret.
+      const closingQuote = code.indexOf('"', openingIndex);
+      if (closingQuote !== -1 && caret.start > closingQuote) {
+        hideAutocomplete();
+        return;
+      }
+      // We are inside a class attribute; extract current content from opening to caret.
+      const classContent = beforeCaret.substring(openingIndex);
+      // Get the current word (split by whitespace)
+      const words = classContent.split(/\s+/);
+      const currentPartial = words[words.length - 1];
+      if (!currentPartial) {
+        hideAutocomplete();
+        return;
+      }
+      // Filter our utility classes based on the current partial.
+      const suggestions = UTILITY_CLASSES.filter(c => c.startsWith(currentPartial));
+      if (suggestions.length === 0) {
+        hideAutocomplete();
+        return;
+      }
+      showAutocompletePopup(suggestions);
+    }
+
+    function showAutocompletePopup(suggestions) {
+      autocompletePopup.innerHTML = "";
+      suggestions.forEach(suggestion => {
+        const item = document.createElement("div");
+        item.textContent = suggestion;
+        item.onclick = () => applySuggestion(suggestion);
+        autocompletePopup.appendChild(item);
+      });
+      // Position the popup near the editor.
+      positionPopup();
+      autocompletePopup.style.display = "block";
+    }
+
+    function hideAutocomplete() {
+      autocompletePopup.style.display = "none";
+    }
+
+    function positionPopup() {
+      // For a simple approach, position the popup at the bottom left of the editor.
+      const rect = editorEl.getBoundingClientRect();
+      autocompletePopup.style.left = rect.left + "px";
+      autocompletePopup.style.top = (rect.bottom - 30) + "px";
+    }
+
+    // Replace the current partial class in the class attribute with the selected suggestion.
+    function applySuggestion(suggestion) {
+      const code = jar.toString();
+      const caret = jar.save();
+      const beforeCaret = code.substring(0, caret.start);
+      const afterCaret = code.substring(caret.start);
+      const classIndex = beforeCaret.lastIndexOf('class="');
+      if (classIndex === -1) return;
+      const openingIndex = classIndex + 7;
+      const classContent = beforeCaret.substring(openingIndex);
+      // Replace the last word in classContent with the suggestion.
+      const words = classContent.split(/\s+/);
+      words[words.length - 1] = suggestion;
+      const newClassContent = words.join(" ");
+      const newBeforeCaret = beforeCaret.substring(0, openingIndex) + newClassContent;
+      const newCode = newBeforeCaret + afterCaret;
+      jar.updateCode(newCode);
+      // Place the caret after the inserted suggestion.
+      jar.restore({ start: newBeforeCaret.length, end: newBeforeCaret.length });
+      hideAutocomplete();
+      updatePlayground();
+    }
+
+    // Initialize playground on page load.
+    document.addEventListener("DOMContentLoaded", () => {
+      updatePlayground();
+    });
+
+    // Hide autocomplete if clicking outside the editor.
+    document.addEventListener("click", (e) => {
+      if (!editorEl.contains(e.target) && !autocompletePopup.contains(e.target)) {
+        hideAutocomplete();
+      }
+    });
+  </script>
 
 
 </body>
