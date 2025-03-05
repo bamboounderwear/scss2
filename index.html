@@ -1,22 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utility-First CSS Framework</title>
-  <!-- Link to the compiled CSS file -->
-  <link rel="stylesheet" href="css/main.css" />
+  <meta charset="UTF-8">
+  <title>Utility-First CSS Framework – Style Guide & Cheat Sheet</title>
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* Basic page styling for demonstration (not part of the utility library) */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #fefefe;
+      color: #333;
+      line-height: 1.5;
+    }
+    header, section {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    header {
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+    }
+    h1, h2, h3, h4, p {
+      margin: 0 0 1rem;
+    }
+    .section-title {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ccc;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+    /* Grid for color swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1rem;
+    }
+    .color-swatch {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+    .color-box {
+      width: 100%;
+      height: 60px;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    /* Table styles for cheat sheet */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      font-size: 0.875rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9f9f9;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .category-row {
+      background: #e9e9e9;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ===========================================
+       HEADER / INTRO
+  ============================================ -->
   <header>
-    <h1>Welcome to My Utility-First CSS Framework</h1>
+    <h1>Utility-First CSS Framework</h1>
+    <p>
+      Welcome to our comprehensive **style guide** and **cheat sheet**. This page demonstrates all
+      design tokens (colors, spacing, fonts, shadows) and provides a reference table for every major
+      utility class in the framework.
+    </p>
   </header>
-  <main>
-    <p class="mt-1">This paragraph has a top margin defined by our utility class.</p>
-    <p class="pt-1">This paragraph has a top padding defined by our utility class.</p>
-  </main>
-  <footer>
-    <p>&copy; 2025 My Framework</p>
-  </footer>
+
+  <!-- ===========================================
+       1. DESIGN TOKENS: COLORS & GRAYSCALE
+  ============================================ -->
+  <section id="colors">
+    <h2 class="section-title">1. Colors</h2>
+    <p>
+      We provide 11 main colors, each with a light and dark variant, plus a grayscale range.
+      These are defined as CSS variables (e.g., <code>--color-1</code>, <code>--color-1-light</code>,
+      <code>--gray-100</code>, etc.) and used within utility classes (like <code>.bg-color-1</code>,
+      <code>.text-color-1-dark</code>, <code>.border-gray-300</code>).
+    </p>
+    
+    <!-- Color Grid: 11 Colors (base, light, dark) -->
+    <h3>Main Colors (Base, Light, Dark)</h3>
+    <div class="color-grid">
+      <!-- Example for color-1 -->
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-1);"></div>
+        <strong>--color-1</strong><br>#FF0000
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-1-light);"></div>
+        <strong>--color-1-light</strong><br>#FF6666
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-1-dark);"></div>
+        <strong>--color-1-dark</strong><br>#990000
+      </div>
+      
+      <!-- Repeat for color-2, color-3, etc. 
+           This is just an example. Replace with actual tokens. -->
+      <!-- color-2 -->
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-2);"></div>
+        <strong>--color-2</strong><br>#00FF00
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-2-light);"></div>
+        <strong>--color-2-light</strong><br>#66FF66
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-2-dark);"></div>
+        <strong>--color-2-dark</strong><br>#009900
+      </div>
+      
+      <!-- ... Continue for color-3 through color-11 ... -->
+    </div>
+
+    <!-- Grayscale range -->
+    <h3>Grayscale Palette</h3>
+    <div class="color-grid">
+      <!-- Example for gray-100 to gray-900 -->
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-100);"></div>
+        <strong>--gray-100</strong><br>#f5f5f5
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-200);"></div>
+        <strong>--gray-200</strong><br>#eeeeee
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-300);"></div>
+        <strong>--gray-300</strong><br>#dddddd
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-400);"></div>
+        <strong>--gray-400</strong><br>#cccccc
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-500);"></div>
+        <strong>--gray-500</strong><br>#888888
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-600);"></div>
+        <strong>--gray-600</strong><br>#666666
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-700);"></div>
+        <strong>--gray-700</strong><br>#444444
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-800);"></div>
+        <strong>--gray-800</strong><br>#222222
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--gray-900);"></div>
+        <strong>--gray-900</strong><br>#111111
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       2. DESIGN TOKENS: SPACING, FONTS, SHADOWS
+  ============================================ -->
+  <section id="spacing-fonts-shadows">
+    <h2 class="section-title">2. Spacing, Fonts, and Shadows</h2>
+    
+    <h3>Spacing Scale</h3>
+    <p>
+      We define 10 spacing steps: <code>--spacing-1</code> (0.25rem) up to <code>--spacing-10</code> (6rem).
+      These power margin/padding utilities, e.g. <code>.m-4</code>, <code>.p-2</code>, <code>.mx-8</code>.
+    </p>
+    <ul>
+      <li><strong>--spacing-1:</strong> 0.25rem (4px)</li>
+      <li><strong>--spacing-2:</strong> 0.5rem (8px)</li>
+      <li><strong>--spacing-3:</strong> 0.75rem (12px)</li>
+      <li><strong>--spacing-4:</strong> 1rem (16px)</li>
+      <li><strong>--spacing-5:</strong> 1.5rem (24px)</li>
+      <li><strong>--spacing-6:</strong> 2rem (32px)</li>
+      <li><strong>--spacing-7:</strong> 2.5rem (40px)</li>
+      <li><strong>--spacing-8:</strong> 3rem (48px)</li>
+      <li><strong>--spacing-9:</strong> 4rem (64px)</li>
+      <li><strong>--spacing-10:</strong> 6rem (96px)</li>
+    </ul>
+
+    <h3>Font Families</h3>
+    <p>
+      The variables <code>--font-sans</code>, <code>--font-serif</code>, and <code>--font-mono</code> define our default typefaces.
+      Utility classes (<code>.font-sans</code>, <code>.font-serif</code>, <code>.font-mono</code>) let you switch easily.
+    </p>
+
+    <h3>Radius & Shadows</h3>
+    <p>
+      Border radius tokens (e.g. <code>--radius-sm</code>, <code>--radius-md</code>, etc.) can be used in
+      classes like <code>.rounded-sm</code>, <code>.rounded-lg</code>. Similarly, shadow tokens
+      (<code>--shadow-sm</code>, <code>--shadow-md</code>, <code>--shadow-lg</code>) power shadow utilities
+      like <code>.shadow-sm</code>, <code>.shadow-lg</code>.
+    </p>
+  </section>
+
+  <!-- ===========================================
+       3. TYPOGRAPHY DEMO
+  ============================================ -->
+  <section id="typography-demo">
+    <h2 class="section-title">3. Typography Demo</h2>
+    <p>
+      Our framework includes font-size utilities (<code>.text-xs</code> to <code>.text-9xl</code>),
+      line-height utilities (<code>.leading-tight</code> to <code>.leading-loose</code>),
+      letter-spacing (<code>.tracking-tight</code>, <code>.tracking-wide</code>), transforms
+      (<code>.uppercase</code>, <code>.capitalize</code>), and font weights
+      (<code>.font-normal</code>, <code>.font-bold</code>, etc.).
+    </p>
+    
+    <div style="margin-bottom: 1rem;">
+      <p class="text-2xl font-serif leading-relaxed tracking-wide">
+        The quick brown fox jumps over the lazy dog.
+      </p>
+      <p class="text-base font-mono leading-normal tracking-tight uppercase">
+        A sample line of text in monospace, uppercase, tight letter spacing.
+      </p>
+      <p class="text-sm font-bold font-sans leading-snug">
+        Another line in bold, smaller text size, sans font.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       4. COMPREHENSIVE CHEAT SHEET
+  ============================================ -->
+  <section id="cheatsheet">
+    <h2 class="section-title">4. Cheat Sheet – Major Utility Classes</h2>
+    <p>
+      Below is a broad listing of our major utility classes. They are grouped by category for convenience.
+      For an even more exhaustive reference, please see <strong>compiled.css</strong>.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Description</th>
+          <th>CSS Declaration</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ============ SPACING ============ -->
+        <tr class="category-row">
+          <td colspan="3">Spacing (Margin & Padding)</td>
+        </tr>
+        <tr>
+          <td><code>.m-1</code> to <code>.m-10</code></td>
+          <td>Margin (all sides) steps 1–10</td>
+          <td><code>margin: var(--spacing-N);</code></td>
+        </tr>
+        <tr>
+          <td><code>.p-1</code> to <code>.p-10</code></td>
+          <td>Padding (all sides) steps 1–10</td>
+          <td><code>padding: var(--spacing-N);</code></td>
+        </tr>
+        <tr>
+          <td><code>.mx-1</code> / <code>.mx-2</code> / etc.</td>
+          <td>Horizontal margin (left + right)</td>
+          <td><code>margin-left: var(--spacing-N); margin-right: var(--spacing-N);</code></td>
+        </tr>
+        <tr>
+          <td><code>.my-1</code> / <code>.my-2</code> / etc.</td>
+          <td>Vertical margin (top + bottom)</td>
+          <td><code>margin-top: var(--spacing-N); margin-bottom: var(--spacing-N);</code></td>
+        </tr>
+        <tr>
+          <td><code>.-m-1</code> to <code>.-m-10</code></td>
+          <td>Negative margins</td>
+          <td><code>margin: calc(var(--spacing-N) * -1);</code></td>
+        </tr>
+        <tr>
+          <td><code>.ml-auto</code>, <code>.mr-auto</code></td>
+          <td>Auto margin for left or right</td>
+          <td><code>margin-left: auto;</code> / <code>margin-right: auto;</code></td>
+        </tr>
+
+        <!-- ============ SIZING ============ -->
+        <tr class="category-row">
+          <td colspan="3">Sizing (Width & Height)</td>
+        </tr>
+        <tr>
+          <td><code>.w-1/2</code>, <code>.w-1/3</code>, etc.</td>
+          <td>Fractional widths</td>
+          <td><code>width: 50%;</code> or <code>width: 33.3333%;</code></td>
+        </tr>
+        <tr>
+          <td><code>.w-4</code>, <code>.w-8</code>, etc.</td>
+          <td>Fixed width in rem steps (example scale)</td>
+          <td><code>width: 1rem;</code> / <code>width: 2rem;</code></td>
+        </tr>
+        <tr>
+          <td><code>.h-screen</code></td>
+          <td>Full viewport height</td>
+          <td><code>height: 100vh;</code></td>
+        </tr>
+        <tr>
+          <td><code>.min-w-0</code>, <code>.max-w-full</code></td>
+          <td>Min/Max width constraints</td>
+          <td><code>min-width: 0;</code> / <code>max-width: 100%;</code></td>
+        </tr>
+        <tr>
+          <td><code>.w-fit</code>, <code>.h-fit</code></td>
+          <td>Fit-content sizing</td>
+          <td><code>width: fit-content;</code>, <code>height: fit-content;</code></td>
+        </tr>
+
+        <!-- ============ TYPOGRAPHY ============ -->
+        <tr class="category-row">
+          <td colspan="3">Typography</td>
+        </tr>
+        <tr>
+          <td><code>.text-xs</code> to <code>.text-9xl</code></td>
+          <td>Font size from ~12px up to ~128px</td>
+          <td><code>font-size: 0.75rem;</code> ... <code>font-size: 8rem;</code></td>
+        </tr>
+        <tr>
+          <td><code>.leading-tight</code> ... <code>.leading-loose</code></td>
+          <td>Line heights from 1.25 up to 2</td>
+          <td><code>line-height: 1.25;</code> ... <code>line-height: 2;</code></td>
+        </tr>
+        <tr>
+          <td><code>.uppercase</code>, <code>.lowercase</code>, <code>.capitalize</code></td>
+          <td>Text transform utilities</td>
+          <td><code>text-transform: uppercase;</code> etc.</td>
+        </tr>
+        <tr>
+          <td><code>.font-sans</code>, <code>.font-serif</code>, <code>.font-mono</code></td>
+          <td>Switch between the 3 main font families</td>
+          <td><code>font-family: var(--font-sans);</code> etc.</td>
+        </tr>
+        <tr>
+          <td><code>.font-thin</code> ... <code>.font-black</code></td>
+          <td>Font weight from 100 up to 900</td>
+          <td><code>font-weight: 100;</code> ... <code>font-weight: 900;</code></td>
+        </tr>
+        <tr>
+          <td><code>.tracking-tight</code>, <code>.tracking-wide</code></td>
+          <td>Letter spacing utilities</td>
+          <td><code>letter-spacing: -0.02em;</code> / <code>0.05em;</code></td>
+        </tr>
+        <tr>
+          <td><code>.text-left</code>, <code>.text-right</code>, etc.</td>
+          <td>Text alignment utilities</td>
+          <td><code>text-align: left;</code> / <code>right;</code> / <code>center;</code></td>
+        </tr>
+
+        <!-- ============ COLORS ============ -->
+        <tr class="category-row">
+          <td colspan="3">Colors (Background, Text, Border)</td>
+        </tr>
+        <tr>
+          <td><code>.bg-color-1</code> ... <code>.bg-color-1-dark</code></td>
+          <td>Background color from our 11 main color tokens</td>
+          <td><code>background-color: var(--color-1);</code>, etc.</td>
+        </tr>
+        <tr>
+          <td><code>.text-color-2</code>, <code>.text-color-2-light</code>, etc.</td>
+          <td>Text color from main color set</td>
+          <td><code>color: var(--color-2-light);</code> etc.</td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray-100</code> ... <code>.text-gray-900</code></td>
+          <td>Background or text color from the grayscale set</td>
+          <td><code>background-color: var(--gray-100);</code> / <code>color: var(--gray-900);</code></td>
+        </tr>
+        <tr>
+          <td><code>.border-color-3-dark</code></td>
+          <td>Border color from color-3 dark variant</td>
+          <td><code>border-color: var(--color-3-dark);</code></td>
+        </tr>
+
+        <!-- ============ LAYOUT ============ -->
+        <tr class="category-row">
+          <td colspan="3">Layout & Display</td>
+        </tr>
+        <tr>
+          <td><code>.block</code>, <code>.inline</code>, <code>.inline-block</code></td>
+          <td>Display utilities</td>
+          <td><code>display: block;</code>, etc.</td>
+        </tr>
+        <tr>
+          <td><code>.hidden</code></td>
+          <td>Hide element (display: none)</td>
+          <td><code>display: none;</code></td>
+        </tr>
+        <tr>
+          <td><code>.overflow-hidden</code>, <code>.overflow-auto</code></td>
+          <td>Overflow control</td>
+          <td><code>overflow: hidden;</code> or <code>auto;</code></td>
+        </tr>
+        <tr>
+          <td><code>.container</code></td>
+          <td>Centered container with max-width (1200px by default)</td>
+          <td><code>margin: 0 auto; max-width: 1200px;</code></td>
+        </tr>
+
+        <!-- ============ FLEX ============ -->
+        <tr class="category-row">
+          <td colspan="3">Flex</td>
+        </tr>
+        <tr>
+          <td><code>.flex</code></td>
+          <td>Sets display: flex</td>
+          <td><code>display: flex;</code></td>
+        </tr>
+        <tr>
+          <td><code>.flex-row</code>, <code>.flex-col</code></td>
+          <td>Flex direction</td>
+          <td><code>flex-direction: row;</code> or <code>column;</code></td>
+        </tr>
+        <tr>
+          <td><code>.items-center</code>, <code>.justify-between</code></td>
+          <td>Flex item alignment & justification</td>
+          <td><code>align-items: center;</code>, <code>justify-content: space-between;</code></td>
+        </tr>
+        <tr>
+          <td><code>.flex-wrap</code>, <code>.flex-nowrap</code></td>
+          <td>Flex wrapping behavior</td>
+          <td><code>flex-wrap: wrap;</code>, etc.</td>
+        </tr>
+        <tr>
+          <td><code>.order-1</code>, <code>.order-last</code></td>
+          <td>Flex item ordering</td>
+          <td><code>order: 1;</code>, <code>order: 9999;</code></td>
+        </tr>
+
+        <!-- ============ GRID ============ -->
+        <tr class="category-row">
+          <td colspan="3">Grid</td>
+        </tr>
+        <tr>
+          <td><code>.grid</code></td>
+          <td>Display: grid (defaults to 12 columns if set in the class)</td>
+          <td><code>display: grid;</code></td>
+        </tr>
+        <tr>
+          <td><code>.col-6</code>, <code>.sm:col-4</code></td>
+          <td>Grid columns spanning 6 or 4 (responsive variants)</td>
+          <td><code>grid-column: span 6;</code>, etc.</td>
+        </tr>
+        <tr>
+          <td><code>.gap-4</code>, <code>.gap-2</code></td>
+          <td>Gap between grid items (pulls from spacing tokens)</td>
+          <td><code>gap: var(--spacing-4);</code></td>
+        </tr>
+
+        <!-- ============ POSITIONING ============ -->
+        <tr class="category-row">
+          <td colspan="3">Positioning & Z-Index</td>
+        </tr>
+        <tr>
+          <td><code>.relative</code>, <code>.absolute</code>, <code>.fixed</code></td>
+          <td>Position utilities</td>
+          <td><code>position: relative;</code>, etc.</td>
+        </tr>
+        <tr>
+          <td><code>.top-0</code>, <code>.right-0</code></td>
+          <td>Offsets (top/right/bottom/left) set to 0</td>
+          <td><code>top: 0;</code>, <code>right: 0;</code></td>
+        </tr>
+        <tr>
+          <td><code>.z-50</code>, <code>.z-9999</code></td>
+          <td>Large jumps for z-index</td>
+          <td><code>z-index: 50;</code>, <code>z-index: 9999;</code></td>
+        </tr>
+
+        <!-- ============ BORDERS & RADIUS ============ -->
+        <tr class="category-row">
+          <td colspan="3">Borders & Radius</td>
+        </tr>
+        <tr>
+          <td><code>.border</code>, <code>.border-2</code>, <code>.border-4</code></td>
+          <td>Border width</td>
+          <td><code>border-width: 1px;</code>, <code>2px;</code>, <code>4px;</code></td>
+        </tr>
+        <tr>
+          <td><code>.border-solid</code>, <code>.border-dotted</code></td>
+          <td>Border style</td>
+          <td><code>border-style: solid;</code> or <code>dotted;</code></td>
+        </tr>
+        <tr>
+          <td><code>.rounded</code>, <code>.rounded-full</code></td>
+          <td>Border radius (smaller or fully rounded)</td>
+          <td><code>border-radius: 0.25rem;</code>, <code>9999px;</code></td>
+        </tr>
+        <tr>
+          <td><code>.ring-2</code>, <code>.ring-primary</code></td>
+          <td>Focus ring outlines</td>
+          <td><code>box-shadow: 0 0 0 2px currentColor;</code> or <code>var(--color-1)</code></td>
+        </tr>
+
+        <!-- ============ BACKGROUNDS & EFFECTS ============ -->
+        <tr class="category-row">
+          <td colspan="3">Backgrounds & Effects</td>
+        </tr>
+        <tr>
+          <td><code>.bg-cover</code>, <code>.bg-contain</code></td>
+          <td>Background size</td>
+          <td><code>background-size: cover;</code> or <code>contain;</code></td>
+        </tr>
+        <tr>
+          <td><code>.bg-no-repeat</code>, <code>.bg-repeat-x</code></td>
+          <td>Background repeat settings</td>
+          <td><code>background-repeat: no-repeat;</code> or <code>repeat-x;</code></td>
+        </tr>
+        <tr>
+          <td><code>.shadow-sm</code>, <code>.shadow-lg</code></td>
+          <td>Box shadow utilities</td>
+          <td><code>box-shadow: var(--shadow-sm);</code> or <code>var(--shadow-lg);</code></td>
+        </tr>
+        <tr>
+          <td><code>.opacity-50</code>, <code>.opacity-75</code></td>
+          <td>Opacity steps</td>
+          <td><code>opacity: 0.5;</code> or <code>0.75;</code></td>
+        </tr>
+
+        <!-- ============ TRANSFORMS & TRANSITIONS ============ -->
+        <tr class="category-row">
+          <td colspan="3">Transforms & Transitions</td>
+        </tr>
+        <tr>
+          <td><code>.translate-x-1/2</code></td>
+          <td>Translate element horizontally by 50%</td>
+          <td><code>transform: translateX(50%);</code></td>
+        </tr>
+        <tr>
+          <td><code>.rotate-45</code></td>
+          <td>Rotate element by 45 degrees</td>
+          <td><code>transform: rotate(45deg);</code></td>
+        </tr>
+        <tr>
+          <td><code>.scale-95</code></td>
+          <td>Scale element to 95%</td>
+          <td><code>transform: scale(0.95);</code></td>
+        </tr>
+        <tr>
+          <td><code>.transition-all</code></td>
+          <td>Apply a generic transition to all properties</td>
+          <td><code>transition: all 0.2s ease-in-out;</code></td>
+        </tr>
+        <tr>
+          <td><code>.duration-300</code>, <code>.delay-150</code></td>
+          <td>Transition timing utilities</td>
+          <td><code>transition-duration: 300ms;</code>, <code>transition-delay: 150ms;</code></td>
+        </tr>
+
+        <!-- ============ ANIMATIONS ============ -->
+        <tr class="category-row">
+          <td colspan="3">Animations</td>
+        </tr>
+        <tr>
+          <td><code>.animate-spin</code></td>
+          <td>Spin element indefinitely</td>
+          <td><code>animation: spin 1s linear infinite;</code></td>
+        </tr>
+        <tr>
+          <td><code>.animate-pulse</code></td>
+          <td>Pulse animation</td>
+          <td><code>animation: pulse 2s ease-in-out infinite;</code></td>
+        </tr>
+        <tr>
+          <td><code>.animate-bounce</code></td>
+          <td>Bounce animation</td>
+          <td><code>animation: bounce 1s infinite;</code></td>
+        </tr>
+
+        <!-- ============ FORMS & TABLES ============ -->
+        <tr class="category-row">
+          <td colspan="3">Forms & Tables</td>
+        </tr>
+        <tr>
+          <td><code>.form-input</code>, <code>.form-select</code></td>
+          <td>Basic styled input / select fields</td>
+          <td><code>display: block; width: 100%; padding: var(--spacing-2); ...</code></td>
+        </tr>
+        <tr>
+          <td><code>.table-auto</code>, <code>.table-fixed</code></td>
+          <td>Table layout utilities</td>
+          <td><code>table-layout: auto;</code> or <code>fixed;</code></td>
+        </tr>
+        <tr>
+          <td><code>.table-bordered</code>, <code>.table-striped</code></td>
+          <td>Border and striped row utilities</td>
+          <td><code>border-collapse: collapse;</code> / <code>nth-child(odd) background</code></td>
+        </tr>
+        <tr>
+          <td><code>.table-hover</code></td>
+          <td>Hover highlight on table rows</td>
+          <td><code>tbody tr:hover { background-color: ... }</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===========================================
+       5. EXTRA INFO & FINAL NOTES
+  ============================================ -->
+  <section id="final-notes">
+    <h2 class="section-title">5. Final Notes & Contact</h2>
+    <p>
+      This page showcases most of the classes in our utility-first framework.
+      For a complete list, refer to the <strong>compiled.css</strong> file or the
+      partial SCSS modules. Have questions or spot an issue?
+      <strong>Contact the design team</strong> or open a request in our repo.
+    </p>
+  </section>
+
 </body>
 </html>
