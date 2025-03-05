@@ -1,4 +1,23 @@
-// main.scss
-@import 'tokens';
-@import 'modules/base';
-@import 'modules/utilities';
+/* main.scss */
+
+/* 1) Import variables/tokens (in the same folder as main.scss) */
+@import "variables-tokens";
+
+/* 2) Import modules from the /modules folder */
+@import "modules/reset-base";
+@import "modules/typography";
+@import "modules/layout";
+@import "modules/flex";
+@import "modules/grid";
+@import "modules/spacing";
+@import "modules/sizing";
+@import "modules/positioning";
+@import "modules/borders-radius";
+@import "modules/backgrounds";
+@import "modules/effects";
+@import "modules/transforms";
+@import "modules/transitions";
+@import "modules/animations";
+@import "modules/forms";
+@import "modules/tables";
+@import "modules/utilities-responsive";

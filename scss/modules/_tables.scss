@@ -1,0 +1,43 @@
+/* ---------------------------------------------------- *
+ * MODULE 17: TABLES                                    *
+ * Bordered, striped, auto/fixed layout, hover, etc.    *
+ * ---------------------------------------------------- */
+
+/* Table Layout */
+.table-auto { table-layout: auto; width: 100%; }
+.table-fixed { table-layout: fixed; width: 100%; }
+
+/* Bordered tables */
+.table-bordered {
+  border-collapse: collapse;
+}
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--gray-300);
+}
+
+/* Striped rows (example) */
+.table-striped tbody tr:nth-child(odd) {
+  background-color: var(--gray-100);
+}
+
+/* Hover rows (example) */
+.table-hover tbody tr:hover {
+  background-color: var(--gray-200);
+}
+
+/* Padding for cells */
+.p-2 > th,
+.p-2 > td {
+  padding: var(--spacing-2);
+}
+.p-4 > th,
+.p-4 > td {
+  padding: var(--spacing-4);
+}
+/* etc. */
+
+/* Responsive table (horizontal scroll) */
+.overflow-x-auto {
+  overflow-x: auto;
+}

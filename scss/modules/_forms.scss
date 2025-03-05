@@ -1,0 +1,59 @@
+/* ----------------------------------------------- *
+ * MODULE 16: FORMS                                *
+ * Basic reset, .form-input, .form-select, focus,  *
+ * custom check/radio, file input, etc.            *
+ * ------------------------------------------------ */
+
+/* Basic form element reset */
+input, textarea, select, button {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font: inherit;
+    color: inherit;
+    box-sizing: border-box;
+  }
+  
+  /* Utility classes for styled inputs/selects */
+  .form-input {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-2);
+    border-radius: var(--spacing-1);
+    border: 1px solid var(--gray-300);
+    background-color: #fff;
+  }
+  
+  .form-select {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-2);
+    border-radius: var(--spacing-1);
+    border: 1px solid var(--gray-300);
+    background-color: #fff;
+    appearance: none; /* remove default arrow if you want a custom icon */
+  }
+  
+  /* Focus state utility
+     The class name is literally "focus:border-blue-500"
+     so we need to escape the colon for valid SCSS. */
+  .\focus\\:border-blue-500:focus {
+    border-color: blue;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.2);
+  }
+  
+  /* Custom check/radio (placeholder example) */
+  .input-checkbox,
+  .input-radio {
+    /* Real custom styling typically requires additional markup or pseudo-elements. */
+  }
+  
+  /* File input / range slider (optional minimal approach) */
+  input[type="file"],
+  input[type="range"] {
+    display: block;
+    width: 100%;
+  }
+  

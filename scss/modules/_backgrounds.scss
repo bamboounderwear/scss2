@@ -1,0 +1,29 @@
+/* -------------------------------------------- *
+ * MODULE 11: BACKGROUNDS                       *
+ * Color utilities, position, size, repeat      *
+ * No gradient utilities as per your choice     *
+ * -------------------------------------------- */
+
+/* Background Colors (example for color-1) */
+.bg-color-1 { background-color: var(--color-1); }
+.bg-color-1-light { background-color: var(--color-1-light); }
+.bg-color-1-dark { background-color: var(--color-1-dark); }
+/* ... similarly for color-2, color-3, ... color-11 */
+
+/* Background Position */
+.bg-center { background-position: center; }
+.bg-top { background-position: top; }
+.bg-bottom { background-position: bottom; }
+.bg-left { background-position: left; }
+.bg-right { background-position: right; }
+
+/* Background Size */
+.bg-cover { background-size: cover; }
+.bg-contain { background-size: contain; }
+.bg-auto { background-size: auto; }
+
+/* Background Repeat */
+.bg-no-repeat { background-repeat: no-repeat; }
+.bg-repeat { background-repeat: repeat; }
+.bg-repeat-x { background-repeat: repeat-x; }
+.bg-repeat-y { background-repeat: repeat-y; }

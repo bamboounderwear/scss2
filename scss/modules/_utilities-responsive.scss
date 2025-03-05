@@ -1,0 +1,63 @@
+/* ---------------------------------------------- *
+ * MODULE 18: UTILITIES & RESPONSIVE HELPERS      *
+ * Cursor, user-select, screenreader, print, etc. *
+ * Breakpoint-based variants (sm:, md:, lg:, xl:) *
+ * ---------------------------------------------- */
+
+/* Cursor utilities */
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-default { cursor: default; }
+
+/* User select */
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+
+/* Screen reader helpers */
+.sr-only {
+  position: absolute;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0,0,0,0); 
+  white-space: nowrap; 
+  border: 0;
+}
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Print utilities (example .print:hidden) */
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+}
+
+/* Responsive classes (handled in preprocessor). 
+   For demonstration, here's how it might compile:
+
+   .sm\\:text-center {
+     @media (min-width: 640px) {
+       text-align: center;
+     }
+   }
+
+   .md\\:text-center {
+     @media (min-width: 768px) {
+       text-align: center;
+     }
+   }
+
+   etc.
+
+   The final compiled CSS depends on your build setup. 
+*/

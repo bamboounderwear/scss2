@@ -1,0 +1,47 @@
+/* ---------------------------------------------- *
+ * MODULE 7: SPACING                              *
+ * 8–10 steps, negative margin, x/y combos, etc.  *
+ * ---------------------------------------------- */
+
+/* Margin (example 1 through 10, using your spacing tokens) */
+.m-1 { margin: var(--spacing-1); }
+.m-2 { margin: var(--spacing-2); }
+.m-3 { margin: var(--spacing-3); }
+/* ... up to m-10, etc. */
+
+/* Negative Margins (example) */
+.-m-1 { margin: calc(var(--spacing-1) * -1); }
+.-m-2 { margin: calc(var(--spacing-2) * -1); }
+/* etc. */
+
+/* Specific Directions: top (t), right (r), bottom (b), left (l), x, y */
+.mt-1 { margin-top: var(--spacing-1); }
+.mr-1 { margin-right: var(--spacing-1); }
+.mb-1 { margin-bottom: var(--spacing-1); }
+.ml-1 { margin-left: var(--spacing-1); }
+.mx-1 {
+  margin-left: var(--spacing-1);
+  margin-right: var(--spacing-1);
+}
+.my-1 {
+  margin-top: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
+}
+
+/* Repeat for all spacing steps (1..10) */
+
+/* Auto margins */
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+/* Padding (similarly) */
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+/* etc. */
+.pt-1 { padding-top: var(--spacing-1); }
+/* etc. */
+.px-1 {
+  padding-left: var(--spacing-1);
+  padding-right: var(--spacing-1);
+}
+/* etc. */

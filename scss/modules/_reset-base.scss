@@ -1,0 +1,40 @@
+/* -------------------------- *
+ * MODULE 1: RESET & BASE     *
+ * Full reset + base styles   *
+ * -------------------------- */
+
+/* 1. Full reset: removing default margins/paddings, setting box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Base font size/line-height (16px, 1.5 line-height as an example) */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: sans-serif; /* This is overridden if you define a separate font below */
+}
+
+/* 3. Link defaults: no underline by default, underline on hover */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 4. Minimal heading style (optional) */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}

@@ -1,0 +1,48 @@
+/* ---------------------------------------------- *
+ * MODULE 3: TYPOGRAPHY                           *
+ * 10+ text sizes, line-heights, transformations, *
+ * letter spacing, etc.                           *
+ * ---------------------------------------------- */
+
+/* Font Families (generic usage if you want `.font-sans`, etc.) */
+.font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  
+  /* Text Sizes (example of 12 steps) */
+  .text-xs { font-size: 0.75rem; }   /* 12px */
+  .text-sm { font-size: 0.875rem; }  /* 14px */
+  .text-base { font-size: 1rem; }    /* 16px */
+  .text-lg { font-size: 1.125rem; }  /* 18px */
+  .text-xl { font-size: 1.25rem; }   /* 20px */
+  .text-2xl { font-size: 1.5rem; }   /* 24px */
+  .text-3xl { font-size: 1.875rem; } /* 30px */
+  .text-4xl { font-size: 2.25rem; }  /* 36px */
+  .text-5xl { font-size: 3rem; }     /* 48px */
+  .text-6xl { font-size: 3.75rem; }  /* 60px */
+  /* ...and so on if you want more than 10... */
+  
+  /* Line Height Utilities */
+  .leading-none { line-height: 1; }
+  .leading-tight { line-height: 1.25; }
+  .leading-snug { line-height: 1.375; }
+  .leading-normal { line-height: 1.5; }
+  .leading-relaxed { line-height: 1.625; }
+  .leading-loose { line-height: 2; }
+  
+  /* Text Transform */
+  .uppercase { text-transform: uppercase; }
+  .lowercase { text-transform: lowercase; }
+  .capitalize { text-transform: capitalize; }
+  
+  /* Letter Spacing */
+  .tracking-tight { letter-spacing: -0.02em; }
+  .tracking-normal { letter-spacing: 0; }
+  .tracking-wide { letter-spacing: 0.05em; }
+  
