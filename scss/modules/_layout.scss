@@ -1,28 +1,48 @@
 /* -------------------------------------------- *
  * MODULE 4: LAYOUT                             *
- * display, overflow, visibility, container     *
+ * Display, overflow, visibility, container     *
  * -------------------------------------------- */
 
 /* Display Utilities */
-.block { display: block; }
-.inline-block { display: inline-block; }
-.inline { display: inline; }
-.inline-flex { display: inline-flex; }
-.hidden { display: none; }
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.hidden {
+  display: none;
+}
 
-/* Overflow */
-.overflow-hidden { overflow: hidden; }
-.overflow-auto { overflow: auto; }
-.overflow-scroll { overflow: scroll; }
+/* Overflow Utilities */
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
 
-/* Visibility */
-.visible { visibility: visible; }
-.invisible { visibility: hidden; }
+/* Visibility Utilities */
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
 
-/* Container Utility (example max-width) */
+/* Container Utility */
 .container {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1200px; /* or whatever you prefer */
+  max-width: 1200px; /* Adjust this value as needed */
 }

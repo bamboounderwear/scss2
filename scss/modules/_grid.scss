@@ -1,44 +1,93 @@
-/* ------------------------------------------------- *
+/* ------------------------------------------------ *
  * MODULE 6: GRID                                    *
- * Standard set of column counts, row counts, gap    *
- * Alignment. No template areas for simplicity.      *
- * Additional note: "col-x, span-x-y" naming for     *
- *  breakpoints can be handled in your preprocessor. *
- * ------------------------------------------------- */
+ * - The grid container (.grid) defines a 12-column   *
+ *   layout for a row.                               *
+ * - Individual cells use .col-x classes to span x    *
+ *   columns (e.g., .col-6 spans 6 out of 12).         *
+ * - Span range classes (e.g., .span-2-4) let you set    *
+ *   explicit grid-column start and end positions.   *
+ * - Responsive variants (sm:, md:, lg:, xl:) are      *
+ *   defined via media queries.                      *
+ * ------------------------------------------------ */
 
-/* Basic Grid Container */
-.grid { display: grid; }
-
-/* Column Counts (2, 3, 4, 6, 12 for example) */
-.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-
-/* Row Counts (2, 3, 4, etc.) */
-.grid-rows-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
-.grid-rows-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
-.grid-rows-4 { grid-template-rows: repeat(4, minmax(0, 1fr)); }
-
-/* Gap (pulling from spacing tokens) */
-.gap-1 { gap: var(--spacing-1); }
-.gap-2 { gap: var(--spacing-2); }
-.gap-3 { gap: var(--spacing-3); }
-.gap-4 { gap: var(--spacing-4); }
-.gap-5 { gap: var(--spacing-5); }
-.gap-6 { gap: var(--spacing-6); }
-/* etc. */
-
-/* Align / Justify Items */
-.justify-items-start { justify-items: start; }
-.justify-items-center { justify-items: center; }
-.justify-items-end { justify-items: end; }
-.justify-items-stretch { justify-items: stretch; }
-
-.items-start { align-items: start; }
-.items-center { align-items: center; }
-.items-end { align-items: end; }
-.items-stretch { align-items: stretch; }
-
-/* Named “col-x, span-x-y” classes can also be handled in a preprocessor. */
+/* Grid Container (Row Level) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-2);
+  }
+  
+  /* Individual Column Utilities for Cells */
+  /* Base (mobile) */
+  .col-1  { grid-column: span 1; }
+  .col-2  { grid-column: span 2; }
+  .col-3  { grid-column: span 3; }
+  .col-4  { grid-column: span 4; }
+  .col-5  { grid-column: span 5; }
+  .col-6  { grid-column: span 6; }
+  .col-7  { grid-column: span 7; }
+  .col-8  { grid-column: span 8; }
+  .col-9  { grid-column: span 9; }
+  .col-10 { grid-column: span 10; }
+  .col-11 { grid-column: span 11; }
+  .col-12 { grid-column: span 12; }
+  
+  /* Responsive Variants for Individual Columns */
+  @media (min-width: 640px) {
+    .sm\:col-1  { grid-column: span 1; }
+    .sm\:col-2  { grid-column: span 2; }
+    .sm\:col-3  { grid-column: span 3; }
+    .sm\:col-4  { grid-column: span 4; }
+    .sm\:col-5  { grid-column: span 5; }
+    .sm\:col-6  { grid-column: span 6; }
+    .sm\:col-7  { grid-column: span 7; }
+    .sm\:col-8  { grid-column: span 8; }
+    .sm\:col-9  { grid-column: span 9; }
+    .sm\:col-10 { grid-column: span 10; }
+    .sm\:col-11 { grid-column: span 11; }
+    .sm\:col-12 { grid-column: span 12; }
+  }
+  
+  @media (min-width: 768px) {
+    .md\:col-1  { grid-column: span 1; }
+    .md\:col-2  { grid-column: span 2; }
+    .md\:col-3  { grid-column: span 3; }
+    .md\:col-4  { grid-column: span 4; }
+    .md\:col-5  { grid-column: span 5; }
+    .md\:col-6  { grid-column: span 6; }
+    .md\:col-7  { grid-column: span 7; }
+    .md\:col-8  { grid-column: span 8; }
+    .md\:col-9  { grid-column: span 9; }
+    .md\:col-10 { grid-column: span 10; }
+    .md\:col-11 { grid-column: span 11; }
+    .md\:col-12 { grid-column: span 12; }
+  }
+  
+  /* Span Range Utilities (for precise control) */
+  .span-2-4 {
+    grid-column: 2 / 4;
+  }
+  .span-3-6 {
+    grid-column: 3 / 6;
+  }
+  /* Add additional span range classes as needed */
+  
+  /* Responsive Span Range Variants */
+  @media (min-width: 1024px) {
+    .lg\:span-2-4 {
+      grid-column: 2 / 4;
+    }
+    .lg\:span-3-6 {
+      grid-column: 3 / 6;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .xl\:span-2-4 {
+      grid-column: 2 / 4;
+    }
+    .xl\:span-3-6 {
+      grid-column: 3 / 6;
+    }
+  }
+  

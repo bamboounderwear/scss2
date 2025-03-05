@@ -1,48 +1,108 @@
 /* ---------------------------------------------- *
  * MODULE 3: TYPOGRAPHY                           *
- * 10+ text sizes, line-heights, transformations, *
- * letter spacing, etc.                           *
+ * Extended text sizes, line-heights, transforms, *
+ * letter spacing, font weights, alignment, etc.  *
  * ---------------------------------------------- */
 
-/* Font Families (generic usage if you want `.font-sans`, etc.) */
+/* 
+   FONT FAMILY UTILITIES
+   - Requires that you define CSS variables:
+     --font-sans, --font-serif, --font-mono
+   in your variables/tokens file.
+*/
 .font-sans {
-    font-family: var(--font-sans);
-  }
-  .font-serif {
-    font-family: var(--font-serif);
-  }
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-  
-  /* Text Sizes (example of 12 steps) */
-  .text-xs { font-size: 0.75rem; }   /* 12px */
-  .text-sm { font-size: 0.875rem; }  /* 14px */
-  .text-base { font-size: 1rem; }    /* 16px */
-  .text-lg { font-size: 1.125rem; }  /* 18px */
-  .text-xl { font-size: 1.25rem; }   /* 20px */
-  .text-2xl { font-size: 1.5rem; }   /* 24px */
-  .text-3xl { font-size: 1.875rem; } /* 30px */
-  .text-4xl { font-size: 2.25rem; }  /* 36px */
-  .text-5xl { font-size: 3rem; }     /* 48px */
-  .text-6xl { font-size: 3.75rem; }  /* 60px */
-  /* ...and so on if you want more than 10... */
-  
-  /* Line Height Utilities */
-  .leading-none { line-height: 1; }
-  .leading-tight { line-height: 1.25; }
-  .leading-snug { line-height: 1.375; }
-  .leading-normal { line-height: 1.5; }
-  .leading-relaxed { line-height: 1.625; }
-  .leading-loose { line-height: 2; }
-  
-  /* Text Transform */
-  .uppercase { text-transform: uppercase; }
-  .lowercase { text-transform: lowercase; }
-  .capitalize { text-transform: capitalize; }
-  
-  /* Letter Spacing */
-  .tracking-tight { letter-spacing: -0.02em; }
-  .tracking-normal { letter-spacing: 0; }
-  .tracking-wide { letter-spacing: 0.05em; }
-  
+  font-family: var(--font-sans);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* 
+   FONT WEIGHT UTILITIES
+   - Adjust or remove weights as needed for your project
+*/
+.font-thin       { font-weight: 100; }
+.font-extralight { font-weight: 200; }
+.font-light      { font-weight: 300; }
+.font-normal     { font-weight: 400; }
+.font-medium     { font-weight: 500; }
+.font-semibold   { font-weight: 600; }
+.font-bold       { font-weight: 700; }
+.font-extrabold  { font-weight: 800; }
+.font-black      { font-weight: 900; }
+
+/* 
+   TEXT SIZE UTILITIES
+   - Example set from .text-xs to .text-9xl 
+   - Adjust or extend as needed
+*/
+.text-xs   { font-size: 0.75rem; }    /* ~12px */
+.text-sm   { font-size: 0.875rem; }   /* ~14px */
+.text-base { font-size: 1rem; }       /* 16px  */
+.text-lg   { font-size: 1.125rem; }   /* 18px  */
+.text-xl   { font-size: 1.25rem; }    /* 20px  */
+.text-2xl  { font-size: 1.5rem; }     /* 24px  */
+.text-3xl  { font-size: 1.875rem; }   /* 30px  */
+.text-4xl  { font-size: 2.25rem; }    /* 36px  */
+.text-5xl  { font-size: 3rem; }       /* 48px  */
+.text-6xl  { font-size: 3.75rem; }    /* 60px  */
+.text-7xl  { font-size: 4.5rem; }     /* 72px  */
+.text-8xl  { font-size: 6rem; }       /* 96px  */
+.text-9xl  { font-size: 8rem; }       /* 128px */
+/* Add more if needed, e.g. .text-10xl, .text-11xl, etc. */
+
+/* 
+   LINE HEIGHT UTILITIES
+   - Commonly known as "leading"
+*/
+.leading-none    { line-height: 1; }
+.leading-tight   { line-height: 1.25; }
+.leading-snug    { line-height: 1.375; }
+.leading-normal  { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose   { line-height: 2; }
+
+/* 
+   TEXT TRANSFORM UTILITIES
+*/
+.uppercase   { text-transform: uppercase; }
+.lowercase   { text-transform: lowercase; }
+.capitalize  { text-transform: capitalize; }
+
+/* 
+   LETTER SPACING UTILITIES
+   - Adjust or extend these as needed
+*/
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-tight   { letter-spacing: -0.02em; }
+.tracking-normal  { letter-spacing: 0; }
+.tracking-wide    { letter-spacing: 0.05em; }
+.tracking-wider   { letter-spacing: 0.1em; }
+
+/* 
+   TEXT ALIGNMENT UTILITIES
+   - For controlling text alignment
+*/
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* 
+   TEXT DECORATION UTILITIES
+   - Useful for quickly toggling underlines, line-through, etc.
+*/
+.underline      { text-decoration: underline; }
+.line-through   { text-decoration: line-through; }
+.no-underline   { text-decoration: none; }
+
+/*
+   If you use color tokens, you can also add text color utilities like:
+   .text-color-1      { color: var(--color-1); }
+   .text-color-1-light { color: var(--color-1-light); }
+   etc.
+   But that might be in a separate Colors or Utilities module.
+*/
