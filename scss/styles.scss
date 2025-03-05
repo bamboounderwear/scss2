@@ -1,11 +1,11 @@
 // style.scss
 // Main SCSS file that imports placeholder modules
 
-@import "modules/variables";
-@import "modules/mixins";
-@import "modules/base";
-@import "modules/layout";
-@import "modules/components";
+@import "modules/animations";
+@import "modules/borders";
+@import "modules/colors";
+@import "modules/display";
+@import "modules/effects";
 
 // Global styles can follow here
 body {
