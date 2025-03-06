@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A minimal utility-first CSS framework using design tokens and modular SCSS.",
   "scripts": {
-    "build": "sass --style=compressed scss/main.scss css/main.css",
-    "watch": "sass --watch scss/main.scss:css/main.css --style compressed"
-  },
+  "build": "sass --style=compact scss/main.scss css/main.css",
+  "watch": "sass --watch scss/main.scss:css/main.css --style compact"
+},
   "author": "",
   "license": "MIT",
   "devDependencies": {
