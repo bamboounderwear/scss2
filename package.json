@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A minimal utility-first CSS framework using design tokens and modular SCSS.",
   "scripts": {
+  "clean": "rm -rf css",
   "build": "sass --style=compressed scss/main.scss css/main.css",
   "watch": "sass --watch scss/main.scss:css/main.css --style=compressed"
 },
