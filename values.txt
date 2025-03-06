@@ -1,0 +1,277 @@
+"Inter", "Helvetica Neue", Arial, sans-serif
+"PT Serif", Georgia, "Times New Roman", serif
+"Space Mono", Menlo, Monaco, monospace
+#000099
+#0000FF
+#009900
+#009999
+#00FF00
+#00FFFF
+#0F2340
+#111111
+#123456
+#222222
+#444444
+#4D004D
+#5E2F0E
+#666666
+#6666FF
+#66FF66
+#66FFFF
+#6789AB
+#800080
+#888888
+#8B4513
+#990000
+#990099
+#995E00
+#999900
+#B0703E
+#B366B3
+#B5914D
+#E9C46A
+#F1D197
+#FF0000
+#FF00FF
+#FF6666
+#FF66FF
+#FFA500
+#FFC966
+#FFFF00
+#FFFF66
+#cccccc
+#dddddd
+#eeeeee
+#f5f5f5
+-0.02em
+-0.05em
+-1px
+-9999
+0
+0 0 0 2px var(--color-1)
+0 10px 15px rgba(0, 0, 0, 0.2)
+0 1px 2px rgba(0, 0, 0, 0.05)
+0 4px 6px rgba(0, 0, 0, 0.1)
+0%
+0.05em
+0.125rem
+0.1em
+0.25
+0.25rem
+0.2s
+0.375rem
+0.5
+0.5em
+0.5rem
+0.75
+0.75rem
+0.875rem
+0px
+0s
+1
+1.125rem
+1.25
+1.25rem
+1.375
+1.5
+1.5rem
+1.625
+1.875rem
+100
+100%
+1000ms
+1000s
+100vh
+1200px
+150ms
+1px
+1rem
+1s
+2
+2.25rem
+2.5rem
+200
+2000ms
+25%
+2px
+2rem
+2s
+3
+3.75rem
+300
+300ms
+33.3333%
+3rem
+4
+4.5rem
+400
+4px
+4rem
+50
+50%
+500
+500ms
+6
+600
+66.6667%
+6rem
+700
+75ms
+800
+8rem
+900
+9999
+9999px
+absolute
+all
+auto
+baseline
+block
+blur(4px)
+blur(8px)
+border-box
+bottom
+bounce
+capitalize
+center
+collapse
+column
+column-reverse
+contain
+cover
+cubic-bezier(0, 0, 0.2, 1)
+currentcolor 0px 0px 0px 2px
+dashed
+default
+dotted
+ease
+ease-in
+ease-in-out
+ease-out
+fadeIn
+fit-content
+fixed
+flex
+flex-end
+flex-start
+grayscale(100%)
+grid
+hidden
+infinite
+inherit
+initial
+inline
+inline-block
+inline-flex
+justify
+left
+line-through
+linear
+lowercase
+multiply
+no-repeat
+none
+normal
+not-allowed
+nowrap
+ping
+pointer
+pulse
+rect(0px, 0px, 0px, 0px)
+relative
+repeat
+repeat(12, 1fr)
+repeat-x
+repeat-y
+rgb(204, 204, 204)
+rgb(255, 255, 255)
+rgba(0, 0, 0, 0.05) 0px 1px 2px
+rgba(0, 0, 0, 0.1) 0px 4px 6px
+rgba(0, 0, 0, 0.2) 0px 10px 15px
+right
+rotate(45deg)
+rotate(90deg)
+row
+row-reverse
+running
+scale(0.95)
+scale(1.05)
+screen
+scroll
+solid
+space-around
+space-between
+space-evenly
+span 1
+span 10
+span 11
+span 12
+span 2
+span 3
+span 4
+span 5
+span 6
+span 7
+span 8
+span 9
+spin
+static
+sticky
+stretch
+text
+top
+translateX(50%)
+translateY(100%)
+underline
+uppercase
+var(--color-1)
+var(--color-1-dark)
+var(--color-1-light)
+var(--color-10)
+var(--color-10-dark)
+var(--color-10-light)
+var(--color-11)
+var(--color-11-dark)
+var(--color-11-light)
+var(--color-2)
+var(--color-2-dark)
+var(--color-2-light)
+var(--color-3)
+var(--color-3-dark)
+var(--color-3-light)
+var(--color-4)
+var(--color-4-dark)
+var(--color-4-light)
+var(--color-5)
+var(--color-5-dark)
+var(--color-5-light)
+var(--color-6)
+var(--color-6-dark)
+var(--color-6-light)
+var(--color-7)
+var(--color-7-dark)
+var(--color-7-light)
+var(--color-8)
+var(--color-8-dark)
+var(--color-8-light)
+var(--color-9)
+var(--color-9-dark)
+var(--color-9-light)
+var(--font-mono)
+var(--font-sans)
+var(--font-serif)
+var(--gray-100)
+var(--gray-200)
+var(--spacing-1)
+var(--spacing-10)
+var(--spacing-2)
+var(--spacing-3)
+var(--spacing-4)
+var(--spacing-5)
+var(--spacing-6)
+var(--spacing-7)
+var(--spacing-8)
+var(--spacing-9)
+visible
+wrap
+wrap-reverse

@@ -144,6 +144,9 @@ justify-content
 left
 letter-spacing
 line-height
+list-style-image
+list-style-position
+list-style-type
 margin-bottom
 margin-left
 margin-right
@@ -155,6 +158,9 @@ min-width
 mix-blend-mode
 opacity
 order
+outline-color
+outline-style
+outline-width
 overflow-x
 overflow-y
 padding-bottom
@@ -180,7 +186,6 @@ transition-duration
 transition-property
 transition-timing-function
 user-select
-vertical-align
 visibility
 white-space-collapse
 width
