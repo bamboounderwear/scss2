@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.93.1"
+    "sass": "^1.85.1"
   }
 }
