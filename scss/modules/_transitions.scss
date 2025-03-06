@@ -61,30 +61,23 @@
 }
 
 .fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Duration Variants */
-.fade-in-75 {
-  animation: fadeIn 75ms ease-in-out;
+.fade-in-1 {
+  animation: fadeIn 100ms ease-in-out;
 }
-.fade-in-150 {
-  animation: fadeIn 150ms ease-in-out;
+.fade-in-2 {
+  animation: fadeIn 250ms ease-in-out;
 }
-.fade-in-300 {
-  animation: fadeIn 300ms ease-in-out;
-}
-.fade-in-500 {
+.fade-in-3 {
   animation: fadeIn 500ms ease-in-out;
 }
+.fade-in-4 {
+  animation: fadeIn 750ms ease-in-out;
+}
 
-/* Delay Variants */
-.fade-in-delay-75 {
-  animation-delay: 75ms;
-}
-.fade-in-delay-150 {
-  animation-delay: 150ms;
-}
-.fade-in-delay-300 {
-  animation-delay: 300ms;
+.fade-in-5 {
+  animation: fadeIn 1000ms ease-in-out;
 }
