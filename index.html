@@ -45,6 +45,12 @@
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1rem;
     }
+        /* Grid for color swatches */
+        .color-grid-large {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 1rem;
+    }
     .color-swatch {
       border: 1px solid #eee;
       border-radius: 4px;
@@ -111,7 +117,7 @@
 
     <!-- Color Grid: 11 Colors (base) -->
 <h3>Main Colors (Base)</h3>
-<div class="color-grid">
+<div class="color-grid-large">
   <!-- Color 1 -->
   <div class="color-swatch">
     <div class="color-box" style="background-color: var(--color-1);"></div>
