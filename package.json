@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "A minimal utility-first CSS framework using design tokens and modular SCSS.",
   "scripts": {
-  "build": "npx sass --style=compressed scss/main.scss css/main.css",
-  "watch": "npx sass --watch scss/main.scss:css/main.css --style=compressed"
+  "build": "sass --style=compressed --no-source-map scss/main.scss css/main.css",
+  "watch": "sass --watch scss/main.scss:css/main.css --style=compressed --no-source-map"
 },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.85.1"
+    "sass": "^1.93.1"
   }
 }
