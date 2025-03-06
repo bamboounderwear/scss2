@@ -1,45 +1,43 @@
 /* -------------------------------------- *
  * MODULE 9: POSITIONING                  *
- * relative, absolute, fixed, sticky, etc.*
- * Large jumps for z-index                *
+ * Relative, absolute, fixed, sticky,     *
+ * offsets (including combined & step-based),
+ * and enhanced z-index utilities         *
  * -------------------------------------- */
 
-/* Position */
-.relative {
-    position: relative;
-  }
-  .absolute {
-    position: absolute;
-  }
-  .fixed {
-    position: fixed;
-  }
-  .sticky {
-    position: sticky;
-  }
-  
-  /* Offsets (top, right, bottom, left) */
-  .top-0 {
-    top: 0;
-  }
-  .right-0 {
-    right: 0;
-  }
-  .bottom-0 {
-    bottom: 0;
-  }
-  .left-0 {
-    left: 0;
-  }
-  
-  /* Z-Index Utilities */
-  .z-50 {
-    z-index: 50;
-  }
-  .z-100 {
-    z-index: 100;
-  }
-  .z-9999 {
-    z-index: 9999;
-  }
-  
+/* Positioning */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+.sticky  { position: sticky; }
+
+/* Combined Offsets */
+.inset-0    { top: 0; right: 0; bottom: 0; left: 0; }
+.inset-x-0  { left: 0; right: 0; }
+.inset-y-0  { top: 0; bottom: 0; }
+
+/* Offset Utilities Based on Spacing Tokens */
+/* Positive Offsets */
+@for $i from 1 through 10 {
+  .top-#{$i}    { top: var(--spacing-#{$i}); }
+  .right-#{$i}  { right: var(--spacing-#{$i}); }
+  .bottom-#{$i} { bottom: var(--spacing-#{$i}); }
+  .left-#{$i}   { left: var(--spacing-#{$i}); }
+}
+
+/* Negative Offsets */
+@for $i from 1 through 10 {
+  .-top-#{$i}    { top: calc(-1 * var(--spacing-#{$i})); }
+  .-right-#{$i}  { right: calc(-1 * var(--spacing-#{$i})); }
+  .-bottom-#{$i} { bottom: calc(-1 * var(--spacing-#{$i})); }
+  .-left-#{$i}   { left: calc(-1 * var(--spacing-#{$i})); }
+}
+
+/* Z-Index Utilities */
+.z-auto   { z-index: auto; }
+.z-10     { z-index: 10; }
+.z-20     { z-index: 20; }
+.z-50     { z-index: 50; }
+.z-100    { z-index: 100; }
+.z-999    { z-index: 999; }
+.z-9999   { z-index: 9999; }

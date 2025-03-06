@@ -1,93 +1,145 @@
 /* ------------------------------------------------ *
- * MODULE 6: GRID                                    *
- * - The grid container (.grid) defines a 12-column   *
- *   layout for a row.                               *
- * - Individual cells use .col-x classes to span x    *
- *   columns (e.g., .col-6 spans 6 out of 12).         *
- * - Span range classes (e.g., .span-2-4) let you set    *
- *   explicit grid-column start and end positions.   *
- * - Responsive variants (sm:, md:, lg:, xl:) are      *
- *   defined via media queries.                      *
+ * MODULE 6: GRID (Simplified Syntax)              *
+ *                                                  *
+ * Container: Use .grid plus a column-count class   *
+ * (e.g. .grid-12) to define the overall grid.      *
+ *                                                  *
+ * Child Elements: Use .col-1 to .col-12 to set the    *
+ * span of each grid item. Responsive variants and   *
+ * explicit span ranges are available.              *
  * ------------------------------------------------ */
 
-/* Grid Container (Row Level) */
+/* Base grid container */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--spacing-2);
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+/* Grid column count utilities: set the number of columns */
+.grid-1  { grid-template-columns: repeat(1, 1fr); }
+.grid-2  { grid-template-columns: repeat(2, 1fr); }
+.grid-3  { grid-template-columns: repeat(3, 1fr); }
+.grid-4  { grid-template-columns: repeat(4, 1fr); }
+.grid-5  { grid-template-columns: repeat(5, 1fr); }
+.grid-6  { grid-template-columns: repeat(6, 1fr); }
+.grid-7  { grid-template-columns: repeat(7, 1fr); }
+.grid-8  { grid-template-columns: repeat(8, 1fr); }
+.grid-9  { grid-template-columns: repeat(9, 1fr); }
+.grid-10 { grid-template-columns: repeat(10, 1fr); }
+.grid-11 { grid-template-columns: repeat(11, 1fr); }
+.grid-12 { grid-template-columns: repeat(12, 1fr); }
+
+/* Child column span utilities (mobile by default) */
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Responsive variants for child column spans */
+@media (min-width: 640px) {
+  .sm\:col-1  { grid-column: span 1; }
+  .sm\:col-2  { grid-column: span 2; }
+  .sm\:col-3  { grid-column: span 3; }
+  .sm\:col-4  { grid-column: span 4; }
+  .sm\:col-5  { grid-column: span 5; }
+  .sm\:col-6  { grid-column: span 6; }
+  .sm\:col-7  { grid-column: span 7; }
+  .sm\:col-8  { grid-column: span 8; }
+  .sm\:col-9  { grid-column: span 9; }
+  .sm\:col-10 { grid-column: span 10; }
+  .sm\:col-11 { grid-column: span 11; }
+  .sm\:col-12 { grid-column: span 12; }
+}
+
+@media (min-width: 768px) {
+  .md\:col-1  { grid-column: span 1; }
+  .md\:col-2  { grid-column: span 2; }
+  .md\:col-3  { grid-column: span 3; }
+  .md\:col-4  { grid-column: span 4; }
+  .md\:col-5  { grid-column: span 5; }
+  .md\:col-6  { grid-column: span 6; }
+  .md\:col-7  { grid-column: span 7; }
+  .md\:col-8  { grid-column: span 8; }
+  .md\:col-9  { grid-column: span 9; }
+  .md\:col-10 { grid-column: span 10; }
+  .md\:col-11 { grid-column: span 11; }
+  .md\:col-12 { grid-column: span 12; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-1  { grid-column: span 1; }
+  .lg\:col-2  { grid-column: span 2; }
+  .lg\:col-3  { grid-column: span 3; }
+  .lg\:col-4  { grid-column: span 4; }
+  .lg\:col-5  { grid-column: span 5; }
+  .lg\:col-6  { grid-column: span 6; }
+  .lg\:col-7  { grid-column: span 7; }
+  .lg\:col-8  { grid-column: span 8; }
+  .lg\:col-9  { grid-column: span 9; }
+  .lg\:col-10 { grid-column: span 10; }
+  .lg\:col-11 { grid-column: span 11; }
+  .lg\:col-12 { grid-column: span 12; }
+}
+
+@media (min-width: 1280px) {
+  .xl\:col-1  { grid-column: span 1; }
+  .xl\:col-2  { grid-column: span 2; }
+  .xl\:col-3  { grid-column: span 3; }
+  .xl\:col-4  { grid-column: span 4; }
+  .xl\:col-5  { grid-column: span 5; }
+  .xl\:col-6  { grid-column: span 6; }
+  .xl\:col-7  { grid-column: span 7; }
+  .xl\:col-8  { grid-column: span 8; }
+  .xl\:col-9  { grid-column: span 9; }
+  .xl\:col-10 { grid-column: span 10; }
+  .xl\:col-11 { grid-column: span 11; }
+  .xl\:col-12 { grid-column: span 12; }
+}
+
+/* Span Range Utilities for precise control */
+@for $start from 1 through 11 {
+  @for $end from ($start + 1) through 12 {
+    .span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
   }
-  
-  /* Individual Column Utilities for Cells */
-  /* Base (mobile) */
-  .col-1  { grid-column: span 1; }
-  .col-2  { grid-column: span 2; }
-  .col-3  { grid-column: span 3; }
-  .col-4  { grid-column: span 4; }
-  .col-5  { grid-column: span 5; }
-  .col-6  { grid-column: span 6; }
-  .col-7  { grid-column: span 7; }
-  .col-8  { grid-column: span 8; }
-  .col-9  { grid-column: span 9; }
-  .col-10 { grid-column: span 10; }
-  .col-11 { grid-column: span 11; }
-  .col-12 { grid-column: span 12; }
-  
-  /* Responsive Variants for Individual Columns */
-  @media (min-width: 640px) {
-    .sm\:col-1  { grid-column: span 1; }
-    .sm\:col-2  { grid-column: span 2; }
-    .sm\:col-3  { grid-column: span 3; }
-    .sm\:col-4  { grid-column: span 4; }
-    .sm\:col-5  { grid-column: span 5; }
-    .sm\:col-6  { grid-column: span 6; }
-    .sm\:col-7  { grid-column: span 7; }
-    .sm\:col-8  { grid-column: span 8; }
-    .sm\:col-9  { grid-column: span 9; }
-    .sm\:col-10 { grid-column: span 10; }
-    .sm\:col-11 { grid-column: span 11; }
-    .sm\:col-12 { grid-column: span 12; }
-  }
-  
-  @media (min-width: 768px) {
-    .md\:col-1  { grid-column: span 1; }
-    .md\:col-2  { grid-column: span 2; }
-    .md\:col-3  { grid-column: span 3; }
-    .md\:col-4  { grid-column: span 4; }
-    .md\:col-5  { grid-column: span 5; }
-    .md\:col-6  { grid-column: span 6; }
-    .md\:col-7  { grid-column: span 7; }
-    .md\:col-8  { grid-column: span 8; }
-    .md\:col-9  { grid-column: span 9; }
-    .md\:col-10 { grid-column: span 10; }
-    .md\:col-11 { grid-column: span 11; }
-    .md\:col-12 { grid-column: span 12; }
-  }
-  
-  /* Span Range Utilities (for precise control) */
-  .span-2-4 {
-    grid-column: 2 / 4;
-  }
-  .span-3-6 {
-    grid-column: 3 / 6;
-  }
-  /* Add additional span range classes as needed */
-  
-  /* Responsive Span Range Variants */
-  @media (min-width: 1024px) {
-    .lg\:span-2-4 {
-      grid-column: 2 / 4;
+}
+
+/* Responsive span range variants */
+@media (min-width: 640px) {
+  @for $start from 1 through 11 {
+    @for $end from ($start + 1) through 12 {
+      .sm\:span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
     }
-    .lg\:span-3-6 {
-      grid-column: 3 / 6;
+  }
+}
+
+@media (min-width: 768px) {
+  @for $start from 1 through 11 {
+    @for $end from ($start + 1) through 12 {
+      .md\:span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
     }
   }
-  
-  @media (min-width: 1280px) {
-    .xl\:span-2-4 {
-      grid-column: 2 / 4;
-    }
-    .xl\:span-3-6 {
-      grid-column: 3 / 6;
+}
+
+@media (min-width: 1024px) {
+  @for $start from 1 through 11 {
+    @for $end from ($start + 1) through 12 {
+      .lg\:span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
     }
   }
-  
+}
+
+@media (min-width: 1280px) {
+  @for $start from 1 through 11 {
+    @for $end from ($start + 1) through 12 {
+      .xl\:span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
+    }
+  }
+}

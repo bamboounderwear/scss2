@@ -1,14 +1,8 @@
-/* ------------------------------------------------- *
- * MODULE 2: VARIABLES & TOKENS                      *
- * 11 main colors (+ light/dark), grayscale, spacing,
- * multiple fonts, optional radius/shadows, etc.     *
- * ------------------------------------------------- */
-
- :root {
+:root {
    /* ======================================================
       BRAND & PALETTE COLORS
-      Replace these with real hex codes for your brand
-      Each color has a base, light, and dark variant
+      Replace these with real hex codes for your brand.
+      Each color has a base, light, and dark variant.
    ====================================================== */
    /* Color 1 (Red, example) */
    --color-1:        #FF0000;
@@ -82,7 +76,7 @@
    /* ======================================================
       SPACING SCALE (REM)
       8–10 steps in 0.25rem increments (example values)
-      Adjust as needed for your design system
+      Adjust as needed for your design system.
    ====================================================== */
    --spacing-1:  0.25rem;  /* 4px  */
    --spacing-2:  0.5rem;   /* 8px  */
@@ -97,7 +91,7 @@
  
    /* ======================================================
       FONT FAMILIES
-      Utilities like .font-sans, .font-serif, .font-mono
+      Utilities like .font-sans, .font-serif, .font-mono.
    ====================================================== */
    --font-sans:  "Inter", "Helvetica Neue", Arial, sans-serif;
    --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
@@ -107,40 +101,46 @@
       OPTIONAL EXTRAS
       (border radius, shadow tokens, etc.)
    ====================================================== */
-   /* Example Border Radii */
-   --radius-none: 0;            /* new token */
-   --radius-sm:   0.125rem;     /* 2px  */
-   --radius-md:   0.25rem;      /* 4px  */
-   --radius-lg:   0.5rem;       /* 8px  */
-   --radius-xl:   1rem;         /* new token */
-   --radius-full: 9999px;       /* fully rounded */
+   /* Border Radii */
+   --radius-none: 0;
+   --radius-sm:   0.125rem;  /* 2px  */
+   --radius-md:   0.25rem;   /* 4px  */
+   --radius-lg:   0.5rem;    /* 8px  */
+   --radius-xl:   1rem;      /* new token */
+   --radius-full: 9999px;    /* fully rounded */
  
-   /* Example Shadow Tokens */
+   /* Shadow Tokens */
    --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.05);
    --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.1);
    --shadow-lg:   0 10px 15px rgba(0, 0, 0, 0.2);
-   --shadow-xl:   0 20px 25px rgba(0, 0, 0, 0.3);   /* new token */
-   --shadow-2xl:  0 25px 50px rgba(0, 0, 0, 0.35);  /* new token */
+   --shadow-xl:   0 20px 25px rgba(0, 0, 0, 0.3);
+   --shadow-2xl:  0 25px 50px rgba(0, 0, 0, 0.35);
  
-   /* Example Opacity Tokens */
-   --opacity-0:   0;       /* new token */
-   --opacity-50:  0.5;     /* new token */
-   --opacity-100: 1;       /* new token */
+   /* Opacity Tokens */
+   --opacity-0:   0;
+   --opacity-50:  0.5;
+   --opacity-100: 1;
  
-   /* Example Transition Tokens */
-   --transition-fast:    150ms; /* new token */
-   --transition-default: 300ms; /* new token */
-   --transition-slow:    500ms; /* new token */
+   /* Transition Tokens */
+   --transition-fast:    150ms;
+   --transition-default: 300ms;
+   --transition-slow:    500ms;
  
-   /* Example Breakpoints (optional if using SCSS mixins) */
-   --bp-sm: 640px;   /* new token */
-   --bp-md: 768px;   /* new token */
-   --bp-lg: 1024px;  /* new token */
-   --bp-xl: 1280px;  /* new token */
+   /* Breakpoints */
+   --bp-sm: 640px;
+   --bp-md: 768px;
+   --bp-lg: 1024px;
+   --bp-xl: 1280px;
  
-   /*
-     If you have other design tokens, define them here.
-     e.g. additional color steps, type scale, more shadows, etc.
-     The goal is to remain unopinionated while offering sensible defaults.
-   */
+   /* ======================================================
+      CONTAINER SIZES
+      Define standard container widths for layout utilities.
+   ====================================================== */
+   --container-xs: 480px;
+   --container-sm: 640px;
+   --container-md: 768px;
+   --container-lg: 1024px;
+   --container-xl: 1200px;
+   --container-2xl: 1440px;
+   --container-max-width: 1200px;
  }

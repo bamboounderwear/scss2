@@ -1,6 +1,8 @@
 /* -------------------------------------------- *
  * MODULE 4: LAYOUT                             *
- * Display, overflow, visibility, container     *
+ * Display, overflow, visibility, container,    *
+ * float, clear, object-fit/position, aspect ratio,*
+ * and isolation utilities                      *
  * -------------------------------------------- */
 
 /* Display Utilities */
@@ -44,5 +46,123 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1200px; /* Adjust this value as needed */
+  max-width: var(--container-max-width, 1200px); /* Default container width */
+}
+
+/* Additional Container Variants */
+.container-xs {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-xs, 480px);
+}
+.container-sm {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-sm, 640px);
+}
+.container-md {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-md, 768px);
+}
+.container-lg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-lg, 1024px);
+}
+.container-xl {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-xl, 1200px);
+}
+.container-2xl {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-2xl, 1440px);
+}
+
+/* Fluid Container */
+.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Float Utilities */
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+
+/* Clear Utilities */
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
+.clear-both {
+  clear: both;
+}
+
+/* Object-Fit Utilities */
+.object-cover {
+  object-fit: cover;
+}
+.object-contain {
+  object-fit: contain;
+}
+.object-fill {
+  object-fit: fill;
+}
+.object-none {
+  object-fit: none;
+}
+.object-scale-down {
+  object-fit: scale-down;
+}
+
+/* Object-Position Utilities */
+.object-center {
+  object-position: center;
+}
+.object-top {
+  object-position: top;
+}
+.object-right {
+  object-position: right;
+}
+.object-bottom {
+  object-position: bottom;
+}
+.object-left {
+  object-position: left;
+}
+
+/* Aspect Ratio Utilities */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Isolation Utilities */
+.isolate {
+  isolation: isolate;
+}
+.isolation-auto {
+  isolation: auto;
 }

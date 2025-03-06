@@ -3,7 +3,7 @@
  * Full reset + base styles   *
  * -------------------------- */
 
-/* 1. Full reset: Removing default margins/paddings, setting box-sizing */
+/* 1. Reset margins, paddings, and set box-sizing */
 *,
 *::before,
 *::after {
@@ -12,54 +12,87 @@
   box-sizing: border-box;
 }
 
-/* 2. Base font size & line-height (neutral, respects user settings) */
+/* 2. Base typography and full-height layout */
 html {
-  font-size: 100%; /* Uses user's default instead of forcing 16px */
-  line-height: 1.5; /* A common default, but can be changed */
+  font-size: 100%; /* Respect user's default font size */
+  line-height: 1.5; /* Common default line-height */
+  box-sizing: border-box;
+  height: 100%; /* For full-height layouts */
+}
+body {
+  height: 100%;
+  font-family: var(--font-sans); /* Use your design token for font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 3. Remove default list styles */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-/* 4. Remove text-decoration on links but inherit color */
+/* 4. Reset links: remove default text decoration and inherit color */
 a {
   text-decoration: none;
   color: inherit;
 }
-
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
-/* 5. Remove default button styles */
+/* 5. Reset form elements */
 button,
 input,
 textarea,
 select {
-  font: inherit; /* Ensures buttons/inputs use the same font as body */
+  font: inherit; /* Inherit font-family from body */
   border: none;
   background: none;
   padding: 0;
   margin: 0;
-  outline: none; /* Remove default focus outline (ensure an accessible alternative) */
+  color: inherit;
+  /* Remove default focus outline; see focus styles below */
 }
 
-/* 6. Make headings neutral (remove bolding) */
-h1, h2, h3, h4, h5, h6 {
+/* 6. Focus Accessibility */
+:focus {
+  outline: 2px solid var(--color-1); /* Accessible focus style using primary color */
+  outline-offset: 2px;
+}
+
+/* 7. Neutralize headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5em;
-  font-weight: inherit; /* Allows typography module to control weights */
+  font-weight: inherit;
 }
 
-/* 7. Prevent images from exceeding their containers */
+/* 8. Responsive images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* 8. Ensure box-sizing is inherited */
-html {
-  box-sizing: border-box;
+/* 9. Reset fieldset and legend */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  padding: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+/* 10. Ensure box-sizing inheritance */
+*, *::before, *::after {
+  box-sizing: inherit;
 }

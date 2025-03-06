@@ -1,32 +1,26 @@
 /* ---------------------------------------------- *
  * MODULE 7: SPACING                              *
- * 8–10 steps, negative margin, x/y combos, etc.  *
+ * 8–10 steps, negative margins, directional,    *
+ * gap utilities, and space-between utilities     *
  * ---------------------------------------------- */
 
 /* 
-   IMPORTANT: Ensure the following variables exist in your :root
-   (or wherever you store CSS variables):
-   :root {
-     --spacing-1: 0.25rem;
-     --spacing-2: 0.5rem;
-     --spacing-3: 0.75rem;
-     --spacing-4: 1rem;
-     --spacing-5: 1.5rem;
-     --spacing-6: 2rem;
-     --spacing-7: 2.5rem;
-     --spacing-8: 3rem;
-     --spacing-9: 4rem;
-     --spacing-10: 6rem;
-   }
-   Adjust values as needed for your design system.
+  Ensure these spacing tokens exist in your :root:
+  --spacing-1:  0.25rem;
+  --spacing-2:  0.5rem;
+  --spacing-3:  0.75rem;
+  --spacing-4:  1rem;
+  --spacing-5:  1.5rem;
+  --spacing-6:  2rem;
+  --spacing-7:  2.5rem;
+  --spacing-8:  3rem;
+  --spacing-9:  4rem;
+  --spacing-10: 6rem;
 */
 
-/* 
-  =====================
-  ==    MARGIN       ==
-  =====================
-*/
-
+/* ----------------------------
+   Margin Utilities
+---------------------------- */
 /* Universal Margin (m-1 through m-10) */
 .m-1  { margin: var(--spacing-1); }
 .m-2  { margin: var(--spacing-2); }
@@ -51,7 +45,7 @@
 .-m-9  { margin: calc(var(--spacing-9) * -1); }
 .-m-10 { margin: calc(var(--spacing-10) * -1); }
 
-/* Directional Margins (Top, Right, Bottom, Left) */
+/* Directional Margins */
 .mt-1  { margin-top: var(--spacing-1); }
 .mt-2  { margin-top: var(--spacing-2); }
 .mt-3  { margin-top: var(--spacing-3); }
@@ -96,100 +90,37 @@
 .ml-9  { margin-left: var(--spacing-9); }
 .ml-10 { margin-left: var(--spacing-10); }
 
-/* X-axis (Left + Right) */
-.mx-1  {
-  margin-left: var(--spacing-1);
-  margin-right: var(--spacing-1);
-}
-.mx-2  {
-  margin-left: var(--spacing-2);
-  margin-right: var(--spacing-2);
-}
-.mx-3  {
-  margin-left: var(--spacing-3);
-  margin-right: var(--spacing-3);
-}
-.mx-4  {
-  margin-left: var(--spacing-4);
-  margin-right: var(--spacing-4);
-}
-.mx-5  {
-  margin-left: var(--spacing-5);
-  margin-right: var(--spacing-5);
-}
-.mx-6  {
-  margin-left: var(--spacing-6);
-  margin-right: var(--spacing-6);
-}
-.mx-7  {
-  margin-left: var(--spacing-7);
-  margin-right: var(--spacing-7);
-}
-.mx-8  {
-  margin-left: var(--spacing-8);
-  margin-right: var(--spacing-8);
-}
-.mx-9  {
-  margin-left: var(--spacing-9);
-  margin-right: var(--spacing-9);
-}
-.mx-10 {
-  margin-left: var(--spacing-10);
-  margin-right: var(--spacing-10);
-}
+/* X-axis Margins */
+.mx-1  { margin-left: var(--spacing-1); margin-right: var(--spacing-1); }
+.mx-2  { margin-left: var(--spacing-2); margin-right: var(--spacing-2); }
+.mx-3  { margin-left: var(--spacing-3); margin-right: var(--spacing-3); }
+.mx-4  { margin-left: var(--spacing-4); margin-right: var(--spacing-4); }
+.mx-5  { margin-left: var(--spacing-5); margin-right: var(--spacing-5); }
+.mx-6  { margin-left: var(--spacing-6); margin-right: var(--spacing-6); }
+.mx-7  { margin-left: var(--spacing-7); margin-right: var(--spacing-7); }
+.mx-8  { margin-left: var(--spacing-8); margin-right: var(--spacing-8); }
+.mx-9  { margin-left: var(--spacing-9); margin-right: var(--spacing-9); }
+.mx-10 { margin-left: var(--spacing-10); margin-right: var(--spacing-10); }
 
-/* Y-axis (Top + Bottom) */
-.my-1  {
-  margin-top: var(--spacing-1);
-  margin-bottom: var(--spacing-1);
-}
-.my-2  {
-  margin-top: var(--spacing-2);
-  margin-bottom: var(--spacing-2);
-}
-.my-3  {
-  margin-top: var(--spacing-3);
-  margin-bottom: var(--spacing-3);
-}
-.my-4  {
-  margin-top: var(--spacing-4);
-  margin-bottom: var(--spacing-4);
-}
-.my-5  {
-  margin-top: var(--spacing-5);
-  margin-bottom: var(--spacing-5);
-}
-.my-6  {
-  margin-top: var(--spacing-6);
-  margin-bottom: var(--spacing-6);
-}
-.my-7  {
-  margin-top: var(--spacing-7);
-  margin-bottom: var(--spacing-7);
-}
-.my-8  {
-  margin-top: var(--spacing-8);
-  margin-bottom: var(--spacing-8);
-}
-.my-9  {
-  margin-top: var(--spacing-9);
-  margin-bottom: var(--spacing-9);
-}
-.my-10 {
-  margin-top: var(--spacing-10);
-  margin-bottom: var(--spacing-10);
-}
+/* Y-axis Margins */
+.my-1  { margin-top: var(--spacing-1); margin-bottom: var(--spacing-1); }
+.my-2  { margin-top: var(--spacing-2); margin-bottom: var(--spacing-2); }
+.my-3  { margin-top: var(--spacing-3); margin-bottom: var(--spacing-3); }
+.my-4  { margin-top: var(--spacing-4); margin-bottom: var(--spacing-4); }
+.my-5  { margin-top: var(--spacing-5); margin-bottom: var(--spacing-5); }
+.my-6  { margin-top: var(--spacing-6); margin-bottom: var(--spacing-6); }
+.my-7  { margin-top: var(--spacing-7); margin-bottom: var(--spacing-7); }
+.my-8  { margin-top: var(--spacing-8); margin-bottom: var(--spacing-8); }
+.my-9  { margin-top: var(--spacing-9); margin-bottom: var(--spacing-9); }
+.my-10 { margin-top: var(--spacing-10); margin-bottom: var(--spacing-10); }
 
 /* Auto Margins */
 .ml-auto { margin-left: auto; }
 .mr-auto { margin-right: auto; }
 
-/* 
-  =====================
-  ==    PADDING      ==
-  =====================
-*/
-
+/* ----------------------------
+   Padding Utilities
+---------------------------- */
 /* Universal Padding (p-1 through p-10) */
 .p-1  { padding: var(--spacing-1); }
 .p-2  { padding: var(--spacing-2); }
@@ -202,7 +133,7 @@
 .p-9  { padding: var(--spacing-9); }
 .p-10 { padding: var(--spacing-10); }
 
-/* Directional Padding (Top, Right, Bottom, Left) */
+/* Directional Padding */
 .pt-1  { padding-top: var(--spacing-1); }
 .pt-2  { padding-top: var(--spacing-2); }
 .pt-3  { padding-top: var(--spacing-3); }
@@ -247,86 +178,50 @@
 .pl-9  { padding-left: var(--spacing-9); }
 .pl-10 { padding-left: var(--spacing-10); }
 
-/* X-axis Padding (Left + Right) */
-.px-1  {
-  padding-left: var(--spacing-1);
-  padding-right: var(--spacing-1);
-}
-.px-2  {
-  padding-left: var(--spacing-2);
-  padding-right: var(--spacing-2);
-}
-.px-3  {
-  padding-left: var(--spacing-3);
-  padding-right: var(--spacing-3);
-}
-.px-4  {
-  padding-left: var(--spacing-4);
-  padding-right: var(--spacing-4);
-}
-.px-5  {
-  padding-left: var(--spacing-5);
-  padding-right: var(--spacing-5);
-}
-.px-6  {
-  padding-left: var(--spacing-6);
-  padding-right: var(--spacing-6);
-}
-.px-7  {
-  padding-left: var(--spacing-7);
-  padding-right: var(--spacing-7);
-}
-.px-8  {
-  padding-left: var(--spacing-8);
-  padding-right: var(--spacing-8);
-}
-.px-9  {
-  padding-left: var(--spacing-9);
-  padding-right: var(--spacing-9);
-}
-.px-10 {
-  padding-left: var(--spacing-10);
-  padding-right: var(--spacing-10);
+/* X-axis Padding */
+.px-1  { padding-left: var(--spacing-1); padding-right: var(--spacing-1); }
+.px-2  { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.px-3  { padding-left: var(--spacing-3); padding-right: var(--spacing-3); }
+.px-4  { padding-left: var(--spacing-4); padding-right: var(--spacing-4); }
+.px-5  { padding-left: var(--spacing-5); padding-right: var(--spacing-5); }
+.px-6  { padding-left: var(--spacing-6); padding-right: var(--spacing-6); }
+.px-7  { padding-left: var(--spacing-7); padding-right: var(--spacing-7); }
+.px-8  { padding-left: var(--spacing-8); padding-right: var(--spacing-8); }
+.px-9  { padding-left: var(--spacing-9); padding-right: var(--spacing-9); }
+.px-10 { padding-left: var(--spacing-10); padding-right: var(--spacing-10); }
+
+/* Y-axis Padding */
+.py-1  { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
+.py-2  { padding-top: var(--spacing-2); padding-bottom: var(--spacing-2); }
+.py-3  { padding-top: var(--spacing-3); padding-bottom: var(--spacing-3); }
+.py-4  { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
+.py-5  { padding-top: var(--spacing-5); padding-bottom: var(--spacing-5); }
+.py-6  { padding-top: var(--spacing-6); padding-bottom: var(--spacing-6); }
+.py-7  { padding-top: var(--spacing-7); padding-bottom: var(--spacing-7); }
+.py-8  { padding-top: var(--spacing-8); padding-bottom: var(--spacing-8); }
+.py-9  { padding-top: var(--spacing-9); padding-bottom: var(--spacing-9); }
+.py-10 { padding-top: var(--spacing-10); padding-bottom: var(--spacing-10); }
+
+/* ----------------------------
+   GAP UTILITIES
+   (For flex and grid containers)
+---------------------------- */
+@for $i from 1 through 10 {
+  .gap-#{$i}   { gap: var(--spacing-#{$i}); }
+  .gap-x-#{$i} { column-gap: var(--spacing-#{$i}); }
+  .gap-y-#{$i} { row-gap: var(--spacing-#{$i}); }
 }
 
-/* Y-axis Padding (Top + Bottom) */
-.py-1  {
-  padding-top: var(--spacing-1);
-  padding-bottom: var(--spacing-1);
-}
-.py-2  {
-  padding-top: var(--spacing-2);
-  padding-bottom: var(--spacing-2);
-}
-.py-3  {
-  padding-top: var(--spacing-3);
-  padding-bottom: var(--spacing-3);
-}
-.py-4  {
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-4);
-}
-.py-5  {
-  padding-top: var(--spacing-5);
-  padding-bottom: var(--spacing-5);
-}
-.py-6  {
-  padding-top: var(--spacing-6);
-  padding-bottom: var(--spacing-6);
-}
-.py-7  {
-  padding-top: var(--spacing-7);
-  padding-bottom: var(--spacing-7);
-}
-.py-8  {
-  padding-top: var(--spacing-8);
-  padding-bottom: var(--spacing-8);
-}
-.py-9  {
-  padding-top: var(--spacing-9);
-  padding-bottom: var(--spacing-9);
-}
-.py-10 {
-  padding-top: var(--spacing-10);
-  padding-bottom: var(--spacing-10);
+/* ----------------------------
+   SPACE BETWEEN UTILITIES
+   (Apply margin between child elements)
+   These classes affect direct children of the element with the utility.
+---------------------------- */
+@for $i from 1 through 10 {
+  .space-x-#{$i} > :not(:first-child) {
+    margin-left: var(--spacing-#{$i});
+  }
+  .space-y-#{$i} > :not(:first-child) {
+    margin-top: var(--spacing-#{$i});
+  }
 }

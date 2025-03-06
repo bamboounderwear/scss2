@@ -161,6 +161,7 @@ Below is an **updated**, **extensive** list of all recommended utilities (includ
 - **Object-Fit / Object-Position**: `.object-cover`, `.object-center`, etc.
 - **Aspect Ratio**: `.aspect-square`, `.aspect-video`
 - **Isolation**: `.isolate`, `.isolation-auto` for stacking contexts
+- **More container utilities**
 
 ### To Implement (Currently in Comments)
 - *(No direct “layout” references in your comments, so nothing is specifically waiting to be uncommented.)*
