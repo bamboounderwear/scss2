@@ -3,7 +3,7 @@
  * Full reset + base styles   *
  * -------------------------- */
 
-/* 1. Full reset: removing default margins/paddings, setting box-sizing */
+/* 1. Full reset: Removing default margins/paddings, setting box-sizing */
 *,
 *::before,
 *::after {
@@ -12,18 +12,18 @@
   box-sizing: border-box;
 }
 
-/* 2. Base font size/line-height (16px, 1.5 line-height as an example) */
+/* 2. Base font size & line-height (neutral, respects user settings) */
 html {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 100%; /* Uses user's default instead of forcing 16px */
+  line-height: 1.5; /* A common default, but can be changed */
 }
 
-body {
-  background-color: #fff;
-  color: #000;
+/* 3. Remove default list styles */
+ul, ol {
+  list-style: none;
 }
 
-/* 3. Link defaults: no underline by default, underline on hover */
+/* 4. Remove text-decoration on links but inherit color */
 a {
   text-decoration: none;
   color: inherit;
@@ -33,8 +33,33 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 4. Minimal heading style (optional) */
+/* 5. Remove default button styles */
+button,
+input,
+textarea,
+select {
+  font: inherit; /* Ensures buttons/inputs use the same font as body */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none; /* Remove default focus outline (ensure an accessible alternative) */
+}
+
+/* 6. Make headings neutral (remove bolding) */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
-  font-weight: bold;
+  font-weight: inherit; /* Allows typography module to control weights */
+}
+
+/* 7. Prevent images from exceeding their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 8. Ensure box-sizing is inherited */
+html {
+  box-sizing: border-box;
 }
