@@ -1,8 +1,9 @@
 /* ----------------------------------------------------- *
  * MODULE 13: TRANSFORMS                                 *
- * All transform utilities automatically include         *
- * transform property. SCSS-safe escaping for fractions   *
- * is applied (e.g., .translate-x-1\/2 compiles to .translate-x-1/2). *
+ * Provides utility classes for transforms including     *
+ * translation, rotation, scaling, and skewing.          *
+ * SCSS-safe escaping for fractions is applied (e.g.,      *
+ * .translate-x-1\/2 compiles to .translate-x-1/2).       *
  * ----------------------------------------------------- */
 
 /* Translate Utilities */
@@ -12,9 +13,13 @@
 .translate-y-full {
   transform: translateY(100%);
 }
-/* Additional translate utilities can be added as needed, e.g.:
-.translate-x-full { transform: translateX(100%); }
-.translate-y-1\/2 { transform: translateY(50%); } */
+/* Additional translate utilities */
+.translate-x-full {
+  transform: translateX(100%);
+}
+.translate-y-1\/2 {
+  transform: translateY(50%);
+}
 
 /* Rotate Utilities */
 .rotate-45 {
@@ -23,8 +28,13 @@
 .rotate-90 {
   transform: rotate(90deg);
 }
-/* More rotations can be added, such as:
-.rotate-180 { transform: rotate(180deg); } */
+/* Additional rotations */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}
 
 /* Scale Utilities */
 .scale-95 {
@@ -33,11 +43,23 @@
 .scale-105 {
   transform: scale(1.05);
 }
-/* Additional scale utilities may be added as needed, e.g.:
-.scale-100 { transform: scale(1); }
-.scale-110 { transform: scale(1.1); } */
+/* Additional scale utilities */
+.scale-100 {
+  transform: scale(1);
+}
+.scale-110 {
+  transform: scale(1.1);
+}
+
+/* Skew Utilities */
+.skew-x-12 {
+  transform: skewX(12deg);
+}
+.skew-y-12 {
+  transform: skewY(12deg);
+}
 
 /* Note:
-   If you want to combine transforms (e.g., translate + rotate),
-   consider defining a separate class or using a build tool that merges them.
+   If you want to combine multiple transforms (e.g., translate + rotate + scale),
+   consider defining composite classes or using a build tool that merges them.
 */

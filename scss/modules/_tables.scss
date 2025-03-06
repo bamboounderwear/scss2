@@ -1,6 +1,7 @@
 /* ---------------------------------------------------- *
  * MODULE 17: TABLES                                    *
- * Bordered, striped, auto/fixed layout, hover, etc.    *
+ * Bordered, striped, auto/fixed layout, hover, and     *
+ * additional alignment and display utilities           *
  * ---------------------------------------------------- */
 
 /* Table Layout */
@@ -22,8 +23,13 @@
   border: 1px solid var(--gray-300);
 }
 
-/* Striped Rows */
+/* Striped Rows (default: odd rows) */
 .table-striped tbody tr:nth-child(odd) {
+  background-color: var(--gray-100);
+}
+
+/* Alternate Striped Variant (even rows) - optional */
+.table-striped-alt tbody tr:nth-child(even) {
   background-color: var(--gray-100);
 }
 
@@ -32,11 +38,8 @@
   background-color: var(--gray-200);
 }
 
-/* Example Cell Padding
-   Here, .p-2 and .p-4 come from your Spacing module.
-   Apply these classes on the table element or a wrapper:
-   <table class="table-bordered p-2"> ... </table>
-   <table class="table-hover p-4"> ... </table> */
+/* Cell Padding */
+/* These classes leverage your spacing tokens (e.g. .p-2, .p-4, etc.) */
 .p-2 > th,
 .p-2 > td {
   padding: var(--spacing-2);
@@ -45,8 +48,26 @@
 .p-4 > td {
   padding: var(--spacing-4);
 }
-/* Extend for p-6, p-8, p-10, etc., as needed
-   (based on your spacing scale). */
+/* Extend for .p-6, .p-8, .p-10 as needed */
+
+/* Vertical Alignment for Table Cells */
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+
+/* Table Row and Cell Display Utilities */
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+}
 
 /* Responsive Table (Horizontal Scroll) */
 .overflow-x-auto {
