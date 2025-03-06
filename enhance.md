@@ -38,6 +38,8 @@ Below is an **updated**, **extensive** list of all recommended utilities (includ
 - **Background Clip** (`.bg-clip-border`, `.bg-clip-text`, etc.)
 - **Background Blend Mode** (similar to mix-blend, e.g. `.bg-blend-screen`)
 - **Gradients** if desired (e.g. `.bg-gradient-to-r`, `.bg-gradient-to-t`, etc.)
+- **Background images?** Let's create a class that can be applied to img tags (or the div wrapping it) so that they become a background image.
+- **Background overlays?** for example, black opacity overlay for readability, and such.
 
 ### To Implement (Currently in Comments)
 - *(No direct references to background classes in your comments, but you do say “No gradient utilities as per your choice.” If you change your mind, you could add them.)*

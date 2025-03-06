@@ -1,9 +1,16 @@
 /* ---------------------------------------------- *
- * MODULE 10: BORDERS & RADIUS                    *
- * Multiple border widths, colors, styles, radius *
+ * MODULE 10: BORDERS, RADIUS & RING UTILITIES      *
+ * Comprehensive border and ring utilities that     *
+ * remain unopinionated yet fully flexible,         *
+ * aligned with your design tokens.                 *
  * ---------------------------------------------- */
 
-/* Border Widths */
+/* --------------------------------------------------
+   1. BORDER WIDTH UTILITIES
+-------------------------------------------------- */
+.border-0 {
+  border-width: 0;
+}
 .border {
   border-width: 1px;
 }
@@ -13,9 +20,42 @@
 .border-4 {
   border-width: 4px;
 }
-/* Extend with additional widths as required */
+/* (Extend with additional widths if required) */
 
-/* Border Color (using color tokens as examples) */
+/* --------------------------------------------------
+   2. DIRECTIONAL BORDER UTILITIES
+-------------------------------------------------- */
+.border-t {
+  border-top-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-l {
+  border-left-width: 1px;
+}
+
+/* Optional: Directional borders with custom width */
+.border-t-2 {
+  border-top-width: 2px;
+}
+.border-r-2 {
+  border-right-width: 2px;
+}
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+.border-l-2 {
+  border-left-width: 2px;
+}
+
+/* --------------------------------------------------
+   3. BORDER COLOR UTILITIES
+-------------------------------------------------- */
+/* Brand Colors */
 .border-color-1 {
   border-color: var(--color-1);
 }
@@ -25,14 +65,33 @@
 .border-color-1-dark {
   border-color: var(--color-1-dark);
 }
-/* Similarly for color-2, color-3, ... color-11 */
-/* Example for color-2:
-.border-color-2 { border-color: var(--color-2); }
-.border-color-2-light { border-color: var(--color-2-light); }
-.border-color-2-dark { border-color: var(--color-2-dark); }
-... */
 
-/* Border Styles */
+.border-color-2 {
+  border-color: var(--color-2);
+}
+.border-color-2-light {
+  border-color: var(--color-2-light);
+}
+.border-color-2-dark {
+  border-color: var(--color-2-dark);
+}
+
+/* Repeat for .border-color-3 through .border-color-11 as needed */
+
+/* Grayscale Borders */
+.border-gray-100 { border-color: var(--gray-100); }
+.border-gray-200 { border-color: var(--gray-200); }
+.border-gray-300 { border-color: var(--gray-300); }
+.border-gray-400 { border-color: var(--gray-400); }
+.border-gray-500 { border-color: var(--gray-500); }
+.border-gray-600 { border-color: var(--gray-600); }
+.border-gray-700 { border-color: var(--gray-700); }
+.border-gray-800 { border-color: var(--gray-800); }
+.border-gray-900 { border-color: var(--gray-900); }
+
+/* --------------------------------------------------
+   4. BORDER STYLE UTILITIES
+-------------------------------------------------- */
 .border-solid {
   border-style: solid;
 }
@@ -43,24 +102,100 @@
   border-style: dotted;
 }
 
-/* Border Radius */
+/* --------------------------------------------------
+   5. BORDER RADIUS UTILITIES
+-------------------------------------------------- */
+/* Full Radius */
 .rounded {
-  border-radius: 0.25rem;
+  border-radius: var(--radius-sm); /* default: 0.125rem */
 }
 .rounded-md {
-  border-radius: 0.375rem;
+  border-radius: var(--radius-md); /* e.g., 0.25rem */
 }
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: var(--radius-lg); /* e.g., 0.5rem */
 }
 .rounded-full {
-  border-radius: 9999px;
+  border-radius: var(--radius-full); /* fully rounded */
 }
 
-/* Ring (outline) for focus states */
+/* Partial/Directional Radius */
+.rounded-t {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+.rounded-r {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+.rounded-b {
+  border-bottom-right-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+.rounded-l {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+/* Corner-specific Radius */
+.rounded-tl {
+  border-top-left-radius: var(--radius-md);
+}
+.rounded-tr {
+  border-top-right-radius: var(--radius-md);
+}
+.rounded-bl {
+  border-bottom-left-radius: var(--radius-md);
+}
+.rounded-br {
+  border-bottom-right-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------
+   6. RING (OUTLINE) UTILITIES
+   (For focus states and emphasis)
+-------------------------------------------------- */
 .ring-2 {
   box-shadow: 0 0 0 2px currentColor;
 }
-.ring-primary {
-  box-shadow: 0 0 0 2px var(--color-1); /* Use desired color token */
+.ring-4 {
+  box-shadow: 0 0 0 4px currentColor;
 }
+.ring-primary {
+  box-shadow: 0 0 0 2px var(--color-1);
+}
+
+/* --------------------------------------------------
+   7. RING OFFSET UTILITIES
+   (Create an extra gap between the element and its ring)
+-------------------------------------------------- */
+/* Set a ring offset width using a CSS variable */
+.ring-offset-2 {
+  --ring-offset-width: 2px;
+}
+.ring-offset-4 {
+  --ring-offset-width: 4px;
+}
+
+/* A basic ring offset implementation; combine with a ring utility */
+.ring-offset {
+  box-shadow: 0 0 0 calc(var(--ring-offset-width, 0))
+    var(--ring-offset-color, #fff);
+}
+
+/* Ring Offset Color Utilities */
+.ring-offset-color-white {
+  --ring-offset-color: #fff;
+}
+.ring-offset-color-black {
+  --ring-offset-color: #000;
+}
+.ring-offset-color-primary {
+  --ring-offset-color: var(--color-1);
+}
+
+/* 
+   Usage Note: Combine ring utilities with ring offset classes.
+   For example, apply .ring-2 and .ring-offset-2 together along with
+   .ring-offset-color-white to achieve a focused outline with an offset.
+*/

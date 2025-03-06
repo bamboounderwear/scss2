@@ -1,9 +1,12 @@
 /* ------------------------------------------------ *
  * MODULE 12: EFFECTS                               *
- * Shadows, opacity, filters, blend, backdrop       *
+ * Shadows, opacity, filters, blend modes, outlines, *
+ * and backdrop filters                           *
  * ------------------------------------------------ */
 
-/* Shadows (multiple levels) */
+/* ---------------------------
+   Shadows
+--------------------------- */
 .shadow-sm {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -13,26 +16,93 @@
 .shadow-lg {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
-/* Extend with additional shadow utilities as needed */
+.shadow-xl {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+}
+.shadow-2xl {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+.shadow-inner {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
 
-/* Opacity (stepped) */
-.opacity-0 { opacity: 0; }
-.opacity-25 { opacity: 0.25; }
-.opacity-50 { opacity: 0.5; }
-.opacity-75 { opacity: 0.75; }
+/* ---------------------------
+   Opacity
+--------------------------- */
+.opacity-0   { opacity: 0; }
+.opacity-25  { opacity: 0.25; }
+.opacity-50  { opacity: 0.5; }
+.opacity-75  { opacity: 0.75; }
 .opacity-100 { opacity: 1; }
 
-/* Filter Utilities */
-.blur-sm { filter: blur(4px); }
-.blur-md { filter: blur(8px); }
-.grayscale { filter: grayscale(100%); }
-/* Additional filter utilities can be added as needed */
+/* ---------------------------
+   Filter Utilities
+--------------------------- */
+/* Blur & Grayscale */
+.blur-sm      { filter: blur(4px); }
+.blur-md      { filter: blur(12px); }
+.blur-lg      { filter: blur(18px); }
+.blur-xl      { filter: blur(32px); }
+.grayscale    { filter: grayscale(100%); }
 
-/* Mix-blend-mode Utilities */
-.mix-blend-multiply { mix-blend-mode: multiply; }
-.mix-blend-screen { mix-blend-mode: screen; }
-/* Add more mix-blend modes if needed */
+/* Brightness */
+.brightness-50   { filter: brightness(0.5); }
+.brightness-75   { filter: brightness(0.75); }
+.brightness-100  { filter: brightness(1); }
+.brightness-125  { filter: brightness(1.25); }
+.brightness-150  { filter: brightness(1.5); }
 
-/* Backdrop Filters */
-.backdrop-blur { backdrop-filter: blur(8px); }
-/* Extend with additional backdrop filters as required */
+/* Contrast */
+.contrast-50   { filter: contrast(0.5); }
+.contrast-75   { filter: contrast(0.75); }
+.contrast-100  { filter: contrast(1); }
+.contrast-125  { filter: contrast(1.25); }
+.contrast-150  { filter: contrast(1.5); }
+
+/* Hue Rotate */
+.hue-rotate-15   { filter: hue-rotate(15deg); }
+.hue-rotate-30   { filter: hue-rotate(30deg); }
+.hue-rotate-45   { filter: hue-rotate(45deg); }
+
+/* ---------------------------
+   Mix-blend Mode Utilities
+--------------------------- */
+.mix-blend-multiply  { mix-blend-mode: multiply; }
+.mix-blend-screen    { mix-blend-mode: screen; }
+.mix-blend-overlay   { mix-blend-mode: overlay; }
+.mix-blend-difference { mix-blend-mode: difference; }
+
+/* ---------------------------
+   Outline Utilities
+--------------------------- */
+.outline {
+  outline: 2px solid currentColor;
+}
+.outline-none {
+  outline: none;
+}
+.outline-offset-1 {
+  outline-offset: 1px;
+}
+.outline-offset-2 {
+  outline-offset: 2px;
+}
+.outline-offset-4 {
+  outline-offset: 4px;
+}
+
+/* ---------------------------
+   Backdrop Filter Utilities
+--------------------------- */
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+.backdrop-sepia {
+  backdrop-filter: sepia(100%);
+}
+.backdrop-contrast {
+  backdrop-filter: contrast(150%);
+}
+.backdrop-grayscale {
+  backdrop-filter: grayscale(100%);
+}

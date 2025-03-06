@@ -1,26 +1,31 @@
 /* -------------------------------------------------- *
- * MODULE 15: ANIMATIONS                              *
- * Prebuilt animations: spin, pulse, ping, bounce,      *
- * durations, iteration counts, etc.                  *
+ * MODULE 15: ANIMATIONS (Descriptive Naming)         *
+ * Provides fade, spin, pulse, bounce, ping, etc.     *
+ * with short/regular/long or slow/fast variants.     *
  * -------------------------------------------------- */
 
-/* Keyframes */
+/* ==================================================
+   KEYFRAMES
+   (Add as many custom animations as you need.)
+================================================== */
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
 }
 
 @keyframes ping {
@@ -31,61 +36,159 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10%);
-  }
+  0%, 100%   { transform: translateY(0); }
+  50%        { transform: translateY(-10%); }
 }
 
-/* Prebuilt Animation Utilities */
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.animate-bounce {
-  animation: bounce 1s infinite;
-}
-
-/* Animation Duration Utilities */
-.anim-duration-500 {
-  animation-duration: 500ms;
-}
-
-.anim-duration-1000 {
-  animation-duration: 1000ms;
-}
-
-/* Iteration Count Utilities */
-.animate-once {
-  animation-iteration-count: 1;
-}
-
-.animate-infinite {
-  animation-iteration-count: infinite;
-}
-
-/* Example Custom Animation (Fade In/Out) */
-/*
-@keyframes fadeIn {
+@keyframes slideIn {
   0% {
+    transform: translateX(-100%);
     opacity: 0;
   }
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
-.animate-fade-in {
+@keyframes flip {
+  0%   { transform: rotateY(0); }
+  100% { transform: rotateY(180deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.25); }
+}
+
+/* ==================================================
+   FADE ANIMATIONS
+   Short, regular, and long variants
+================================================== */
+.fade-in {
   animation: fadeIn 500ms ease-in forwards;
 }
-*/
+.fade-in-short {
+  animation: fadeIn 300ms ease-in forwards;
+}
+.fade-in-long {
+  animation: fadeIn 700ms ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 500ms ease-in forwards;
+}
+.fade-out-short {
+  animation: fadeOut 300ms ease-in forwards;
+}
+.fade-out-long {
+  animation: fadeOut 700ms ease-in forwards;
+}
+
+/* ==================================================
+   SPIN ANIMATIONS
+   Slow, regular, and fast
+================================================== */
+.spin {
+  animation: spin 1s linear infinite;
+}
+.spin-slow {
+  animation: spin 2s linear infinite;
+}
+.spin-fast {
+  animation: spin 500ms linear infinite;
+}
+
+/* ==================================================
+   BOUNCE ANIMATIONS
+   Short, regular, and long
+================================================== */
+.bounce {
+  animation: bounce 1s infinite;
+}
+.bounce-short {
+  animation: bounce 500ms infinite;
+}
+.bounce-long {
+  animation: bounce 2s infinite;
+}
+
+/* ==================================================
+   PULSE ANIMATIONS
+   Slow, regular, and fast
+================================================== */
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+.pulse-fast {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* ==================================================
+   PING ANIMATIONS
+   Slow, regular, and fast
+================================================== */
+.ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.ping-slow {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.ping-fast {
+  animation: ping 500ms cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ==================================================
+   EXTRA ANIMATIONS
+   Slide In, Flip, Heartbeat
+================================================== */
+.slide-in {
+  animation: slideIn 500ms ease-in-out forwards;
+}
+.flip {
+  animation: flip 800ms ease-in-out forwards;
+}
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ==================================================
+   OPTIONAL UTILITY CLASSES (Iteration, Fill, etc.)
+   - Keep them if you want to remain flexible.
+================================================== */
+
+/* Animation Iteration Counts */
+.animate-once {
+  animation-iteration-count: 1;
+}
+.animate-infinite {
+  animation-iteration-count: infinite;
+}
+.animate-count-3 {
+  animation-iteration-count: 3;
+}
+
+/* Animation Fill Modes */
+.animate-fill-none {
+  animation-fill-mode: none;
+}
+.animate-fill-forwards {
+  animation-fill-mode: forwards;
+}
+.animate-fill-both {
+  animation-fill-mode: both;
+}
+
+/* Animation Directions */
+.animate-normal {
+  animation-direction: normal;
+}
+.animate-reverse {
+  animation-direction: reverse;
+}
+.animate-alternate {
+  animation-direction: alternate;
+}
