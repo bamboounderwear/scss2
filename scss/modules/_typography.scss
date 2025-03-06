@@ -6,107 +6,199 @@
 
 /* 
    FONT FAMILY UTILITIES
-   - Requires that you define CSS variables:
-     --font-sans, --font-serif, --font-mono
-   in your variables/tokens file.
+   - Requires that you define CSS variables in your
+     variables/tokens file:
+       --font-sans, --font-serif, --font-mono
 */
 .font-sans {
-  font-family: var(--font-sans);
-}
-.font-serif {
-  font-family: var(--font-serif);
-}
-.font-mono {
-  font-family: var(--font-mono);
-}
-
-/* 
-   FONT WEIGHT UTILITIES
-   - Adjust or remove weights as needed for your project
-*/
-.font-thin       { font-weight: 100; }
-.font-extralight { font-weight: 200; }
-.font-light      { font-weight: 300; }
-.font-normal     { font-weight: 400; }
-.font-medium     { font-weight: 500; }
-.font-semibold   { font-weight: 600; }
-.font-bold       { font-weight: 700; }
-.font-extrabold  { font-weight: 800; }
-.font-black      { font-weight: 900; }
-
-/* 
-   TEXT SIZE UTILITIES
-   - Example set from .text-xs to .text-9xl 
-   - Adjust or extend as needed
-*/
-.text-xs   { font-size: 0.75rem; }    /* ~12px */
-.text-sm   { font-size: 0.875rem; }   /* ~14px */
-.text-base { font-size: 1rem; }       /* 16px  */
-.text-lg   { font-size: 1.125rem; }   /* 18px  */
-.text-xl   { font-size: 1.25rem; }    /* 20px  */
-.text-2xl  { font-size: 1.5rem; }     /* 24px  */
-.text-3xl  { font-size: 1.875rem; }   /* 30px  */
-.text-4xl  { font-size: 2.25rem; }    /* 36px  */
-.text-5xl  { font-size: 3rem; }       /* 48px  */
-.text-6xl  { font-size: 3.75rem; }    /* 60px  */
-.text-7xl  { font-size: 4.5rem; }     /* 72px  */
-.text-8xl  { font-size: 6rem; }       /* 96px  */
-.text-9xl  { font-size: 8rem; }       /* 128px */
-/* Add more if needed, e.g. .text-10xl, .text-11xl, etc. */
-
-/* 
-   LINE HEIGHT UTILITIES
-   - Commonly known as "leading"
-*/
-.leading-none    { line-height: 1; }
-.leading-tight   { line-height: 1.25; }
-.leading-snug    { line-height: 1.375; }
-.leading-normal  { line-height: 1.5; }
-.leading-relaxed { line-height: 1.625; }
-.leading-loose   { line-height: 2; }
-
-/* 
-   TEXT TRANSFORM UTILITIES
-*/
-.uppercase   { text-transform: uppercase; }
-.lowercase   { text-transform: lowercase; }
-.capitalize  { text-transform: capitalize; }
-
-/* 
-   LETTER SPACING UTILITIES
-   - Adjust or extend these as needed
-*/
-.tracking-tighter { letter-spacing: -0.05em; }
-.tracking-tight   { letter-spacing: -0.02em; }
-.tracking-normal  { letter-spacing: 0; }
-.tracking-wide    { letter-spacing: 0.05em; }
-.tracking-wider   { letter-spacing: 0.1em; }
-
-/* 
-   TEXT ALIGNMENT UTILITIES
-   - For controlling text alignment
-*/
-.text-left   { text-align: left; }
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
-.text-justify { text-align: justify; }
-
-/* 
-   TEXT DECORATION UTILITIES
-   - Useful for quickly toggling underlines, line-through, etc.
-*/
-.underline      { text-decoration: underline; }
-.line-through   { text-decoration: line-through; }
-.no-underline   { text-decoration: none; }
-
-/*
-   If you use color tokens, you can also add text color utilities like:
-   .text-color-1      { color: var(--color-1); }
-   .text-color-1-light { color: var(--color-1-light); }
-   etc.
-   But that might be in a separate Colors or Utilities module.
-*/
-
-body {
    font-family: var(--font-sans);
- } 
+ }
+ .font-serif {
+   font-family: var(--font-serif);
+ }
+ .font-mono {
+   font-family: var(--font-mono);
+ }
+ 
+ /* 
+    FONT WEIGHT UTILITIES
+    - Adjust or remove weights as needed
+ */
+ .font-thin       { font-weight: 100; }
+ .font-extralight { font-weight: 200; }
+ .font-light      { font-weight: 300; }
+ .font-normal     { font-weight: 400; }
+ .font-medium     { font-weight: 500; }
+ .font-semibold   { font-weight: 600; }
+ .font-bold       { font-weight: 700; }
+ .font-extrabold  { font-weight: 800; }
+ .font-black      { font-weight: 900; }
+ 
+ /* 
+    TEXT STYLE UTILITIES
+    - Quickly toggle italics
+ */
+ .italic     { font-style: italic; }
+ .not-italic { font-style: normal; }
+ 
+ /* 
+    TEXT SIZE UTILITIES
+    - Example set from .text-xs to .text-9xl 
+    - Extended to .text-10xl, .text-11xl, etc.
+ */
+ .text-xs   { font-size: 0.75rem; }   /* ~12px */
+ .text-sm   { font-size: 0.875rem; }  /* ~14px */
+ .text-base { font-size: 1rem; }      /* 16px  */
+ .text-lg   { font-size: 1.125rem; }  /* 18px  */
+ .text-xl   { font-size: 1.25rem; }   /* 20px  */
+ .text-2xl  { font-size: 1.5rem; }    /* 24px  */
+ .text-3xl  { font-size: 1.875rem; }  /* 30px  */
+ .text-4xl  { font-size: 2.25rem; }   /* 36px  */
+ .text-5xl  { font-size: 3rem; }      /* 48px  */
+ .text-6xl  { font-size: 3.75rem; }   /* 60px  */
+ .text-7xl  { font-size: 4.5rem; }    /* 72px  */
+ .text-8xl  { font-size: 6rem; }      /* 96px  */
+ .text-9xl  { font-size: 8rem; }      /* 128px */
+ 
+ /* Extended sizes (optional) */
+ .text-10xl { font-size: 10rem; }     /* ~160px */
+ .text-11xl { font-size: 12rem; }     /* ~192px */
+ /* Add more if needed, e.g. .text-12xl, etc. */
+ 
+ /* 
+    LINE HEIGHT UTILITIES
+    - Commonly known as "leading"
+ */
+ .leading-none    { line-height: 1; }
+ .leading-tight   { line-height: 1.25; }
+ .leading-snug    { line-height: 1.375; }
+ .leading-normal  { line-height: 1.5; }
+ .leading-relaxed { line-height: 1.625; }
+ .leading-loose   { line-height: 2; }
+ 
+ /* 
+    TEXT TRANSFORM UTILITIES
+ */
+ .uppercase   { text-transform: uppercase; }
+ .lowercase   { text-transform: lowercase; }
+ .capitalize  { text-transform: capitalize; }
+ 
+ /* 
+    LETTER SPACING UTILITIES
+ */
+ .tracking-tighter { letter-spacing: -0.05em; }
+ .tracking-tight   { letter-spacing: -0.02em; }
+ .tracking-normal  { letter-spacing: 0; }
+ .tracking-wide    { letter-spacing: 0.05em; }
+ .tracking-wider   { letter-spacing: 0.1em; }
+ 
+ /* 
+    TEXT ALIGNMENT UTILITIES
+ */
+ .text-left    { text-align: left; }
+ .text-center  { text-align: center; }
+ .text-right   { text-align: right; }
+ .text-justify { text-align: justify; }
+ 
+ /* 
+    TEXT DECORATION UTILITIES
+ */
+ .underline      { text-decoration: underline; }
+ .line-through   { text-decoration: line-through; }
+ .no-underline   { text-decoration: none; }
+ 
+ /* 
+    WHITESPACE & BREAK UTILITIES
+    - Control how text wraps or breaks
+ */
+ .whitespace-nowrap { white-space: nowrap; }
+ .break-words       { overflow-wrap: break-word; word-wrap: break-word; }
+ .break-normal      { overflow-wrap: normal; word-wrap: normal; }
+ 
+ /* 
+    LIST STYLE UTILITIES
+    - Re-apply native list styles if needed
+ */
+ .list-disc    { list-style-type: disc; }
+ .list-decimal { list-style-type: decimal; }
+ 
+ /* 
+    TEXT OVERFLOW UTILITIES
+    - For truncating text with ellipsis
+    - Often used with a fixed width/width utility
+ */
+ .truncate {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+ 
+ /* 
+    TEXT COLOR UTILITIES
+    - Using the color tokens from your variables module
+    - Example for color-1; repeat pattern for color-2 to color-11, plus grayscale if you like
+ */
+ .text-color-1        { color: var(--color-1); }
+ .text-color-1-light  { color: var(--color-1-light); }
+ .text-color-1-dark   { color: var(--color-1-dark); }
+  
+ .text-color-2        { color: var(--color-2); }
+ .text-color-2-light  { color: var(--color-2-light); }
+ .text-color-2-dark   { color: var(--color-2-dark); }
+  
+ .text-color-3        { color: var(--color-3); }
+ .text-color-3-light  { color: var(--color-3-light); }
+ .text-color-3-dark   { color: var(--color-3-dark); }
+  
+ .text-color-4        { color: var(--color-4); }
+ .text-color-4-light  { color: var(--color-4-light); }
+ .text-color-4-dark   { color: var(--color-4-dark); }
+  
+ .text-color-5        { color: var(--color-5); }
+ .text-color-5-light  { color: var(--color-5-light); }
+ .text-color-5-dark   { color: var(--color-5-dark); }
+  
+ .text-color-6        { color: var(--color-6); }
+ .text-color-6-light  { color: var(--color-6-light); }
+ .text-color-6-dark   { color: var(--color-6-dark); }
+  
+ .text-color-7        { color: var(--color-7); }
+ .text-color-7-light  { color: var(--color-7-light); }
+ .text-color-7-dark   { color: var(--color-7-dark); }
+  
+ .text-color-8        { color: var(--color-8); }
+ .text-color-8-light  { color: var(--color-8-light); }
+ .text-color-8-dark   { color: var(--color-8-dark); }
+  
+ .text-color-9        { color: var(--color-9); }
+ .text-color-9-light  { color: var(--color-9-light); }
+ .text-color-9-dark   { color: var(--color-9-dark); }
+  
+ .text-color-10       { color: var(--color-10); }
+ .text-color-10-light { color: var(--color-10-light); }
+ .text-color-10-dark  { color: var(--color-10-dark); }
+  
+ .text-color-11       { color: var(--color-11); }
+ .text-color-11-light { color: var(--color-11-light); }
+ .text-color-11-dark  { color: var(--color-11-dark); } 
+ 
+ /* Grayscale text colors (optional) */
+ .text-gray-100 { color: var(--gray-100); }
+ .text-gray-200 { color: var(--gray-200); }
+ .text-gray-300 { color: var(--gray-300); }
+ .text-gray-400 { color: var(--gray-400); }
+ .text-gray-500 { color: var(--gray-500); }
+ .text-gray-600 { color: var(--gray-600); }
+ .text-gray-700 { color: var(--gray-700); }
+ .text-gray-800 { color: var(--gray-800); }
+ .text-gray-900 { color: var(--gray-900); }
+ 
+ /* 
+    Base body style: unopinionated default
+    Uses our sans font token. Feel free to remove or
+    adjust if you don't want a default.
+ */
+ body {
+   font-family: var(--font-sans);
+ }
+ 
