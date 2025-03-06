@@ -61,23 +61,18 @@
 }
 
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 1000s ease-in-out;
 }
 
 /* Duration Variants */
-.fade-in-1 {
-  animation: fadeIn 100ms ease-in-out;
-}
-.fade-in-2 {
-  animation: fadeIn 250ms ease-in-out;
-}
-.fade-in-3 {
+
+.fade-in-500 {
   animation: fadeIn 500ms ease-in-out;
 }
-.fade-in-4 {
-  animation: fadeIn 750ms ease-in-out;
+.fade-in-1000 {
+  animation: fadeIn 1000ms ease-in-out;
 }
 
-.fade-in-5 {
-  animation: fadeIn 1000ms ease-in-out;
+.fade-in-2000 {
+  animation: fadeIn 2000ms ease-in-out;
 }
