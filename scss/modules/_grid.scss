@@ -5,8 +5,8 @@
  * defaults to a 12-column grid. (Override with     *
  * .grid-# if necessary.)                           *
  *                                                  *
- * Child Elements: Use .col-1 to .col-12 or the       *
- * responsive variants to control the span.         *
+ * Child Elements: Use the responsive variants to   *
+ * control the span at each breakpoint.             *
  * Explicit span ranges are also available.         *
  * ------------------------------------------------ */
 
@@ -31,7 +31,7 @@
 .grid-11 { grid-template-columns: repeat(11, 1fr); }
 .grid-12 { grid-template-columns: repeat(12, 1fr); }
 
-/* Child column span utilities (mobile default) */
+/* If needed, unprefixed child column span utilities */
 .col-1  { grid-column: span 1; }
 .col-2  { grid-column: span 2; }
 .col-3  { grid-column: span 3; }
@@ -45,22 +45,21 @@
 .col-11 { grid-column: span 11; }
 .col-12 { grid-column: span 12; }
 
-/* Responsive variants for child column spans */
-@media (min-width: 640px) {
-  .sm\:col-1  { grid-column: span 1; }
-  .sm\:col-2  { grid-column: span 2; }
-  .sm\:col-3  { grid-column: span 3; }
-  .sm\:col-4  { grid-column: span 4; }
-  .sm\:col-5  { grid-column: span 5; }
-  .sm\:col-6  { grid-column: span 6; }
-  .sm\:col-7  { grid-column: span 7; }
-  .sm\:col-8  { grid-column: span 8; }
-  .sm\:col-9  { grid-column: span 9; }
-  .sm\:col-10 { grid-column: span 10; }
-  .sm\:col-11 { grid-column: span 11; }
-  .sm\:col-12 { grid-column: span 12; }
-}
+/* Responsive variants for mobile defaults – now these apply regardless of viewport size */
+.sm\:col-1  { grid-column: span 1; }
+.sm\:col-2  { grid-column: span 2; }
+.sm\:col-3  { grid-column: span 3; }
+.sm\:col-4  { grid-column: span 4; }
+.sm\:col-5  { grid-column: span 5; }
+.sm\:col-6  { grid-column: span 6; }
+.sm\:col-7  { grid-column: span 7; }
+.sm\:col-8  { grid-column: span 8; }
+.sm\:col-9  { grid-column: span 9; }
+.sm\:col-10 { grid-column: span 10; }
+.sm\:col-11 { grid-column: span 11; }
+.sm\:col-12 { grid-column: span 12; }
 
+/* Responsive variants for larger breakpoints */
 @media (min-width: 768px) {
   .md\:col-1  { grid-column: span 1; }
   .md\:col-2  { grid-column: span 2; }
