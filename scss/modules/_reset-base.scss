@@ -58,7 +58,7 @@ select {
 
 /* 6. Focus Accessibility */
 :focus {
-  outline: 2px solid var(--color-1); /* Accessible focus style using primary color */
+  outline: 2px solid var(--color-brand); /* Accessible focus style using primary brand color */
   outline-offset: 2px;
 }
 

@@ -11,49 +11,21 @@
    1. BACKGROUND COLOR UTILITIES
    - Main Brand Colors
 ====================================================== */
-.bg-color-1       { background-color: var(--color-1); }
-.bg-color-1-light { background-color: var(--color-1-light); }
-.bg-color-1-dark  { background-color: var(--color-1-dark); }
+.bg-color-brand       { background-color: var(--color-brand); }
+.bg-color-brand-light { background-color: var(--color-brand-light); }
+.bg-color-brand-dark  { background-color: var(--color-brand-dark); }
 
-.bg-color-2       { background-color: var(--color-2); }
-.bg-color-2-light { background-color: var(--color-2-light); }
-.bg-color-2-dark  { background-color: var(--color-2-dark); }
+.bg-color-brand-2       { background-color: var(--color-brand-2); }
+.bg-color-brand-2-light { background-color: var(--color-brand-2-light); }
+.bg-color-brand-2-dark  { background-color: var(--color-brand-2-dark); }
 
-.bg-color-3       { background-color: var(--color-3); }
-.bg-color-3-light { background-color: var(--color-3-light); }
-.bg-color-3-dark  { background-color: var(--color-3-dark); }
+.bg-color-brand-3       { background-color: var(--color-brand-3); }
+.bg-color-brand-3-light { background-color: var(--color-brand-3-light); }
+.bg-color-brand-3-dark  { background-color: var(--color-brand-3-dark); }
 
-.bg-color-4       { background-color: var(--color-4); }
-.bg-color-4-light { background-color: var(--color-4-light); }
-.bg-color-4-dark  { background-color: var(--color-4-dark); }
-
-.bg-color-5       { background-color: var(--color-5); }
-.bg-color-5-light { background-color: var(--color-5-light); }
-.bg-color-5-dark  { background-color: var(--color-5-dark); }
-
-.bg-color-6       { background-color: var(--color-6); }
-.bg-color-6-light { background-color: var(--color-6-light); }
-.bg-color-6-dark  { background-color: var(--color-6-dark); }
-
-.bg-color-7       { background-color: var(--color-7); }
-.bg-color-7-light { background-color: var(--color-7-light); }
-.bg-color-7-dark  { background-color: var(--color-7-dark); }
-
-.bg-color-8       { background-color: var(--color-8); }
-.bg-color-8-light { background-color: var(--color-8-light); }
-.bg-color-8-dark  { background-color: var(--color-8-dark); }
-
-.bg-color-9       { background-color: var(--color-9); }
-.bg-color-9-light { background-color: var(--color-9-light); }
-.bg-color-9-dark  { background-color: var(--color-9-dark); }
-
-.bg-color-10       { background-color: var(--color-10); }
-.bg-color-10-light { background-color: var(--color-10-light); }
-.bg-color-10-dark  { background-color: var(--color-10-dark); }
-
-.bg-color-11       { background-color: var(--color-11); }
-.bg-color-11-light { background-color: var(--color-11-light); }
-.bg-color-11-dark  { background-color: var(--color-11-dark); }
+/* NEW: Background Utilities for White & Black */
+.bg-white { background-color: var(--color-white); }
+.bg-black { background-color: var(--color-black); }
 
 /* ======================================================
    2. GREY BACKGROUND UTILITIES
@@ -135,16 +107,16 @@
    - Optional utilities to apply linear gradients.
 ====================================================== */
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--color-1), var(--color-2));
+  background-image: linear-gradient(to right, var(--color-brand), var(--color-brand-2));
 }
 .bg-gradient-to-l {
-  background-image: linear-gradient(to left, var(--color-1), var(--color-2));
+  background-image: linear-gradient(to left, var(--color-brand), var(--color-brand-2));
 }
 .bg-gradient-to-t {
-  background-image: linear-gradient(to top, var(--color-3), var(--color-4));
+  background-image: linear-gradient(to top, var(--color-brand-3), var(--color-brand-3-dark));
 }
 .bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--color-3), var(--color-4));
+  background-image: linear-gradient(to bottom, var(--color-brand-3), var(--color-brand-3-dark));
 }
 
 /* ======================================================
@@ -158,11 +130,6 @@
   background-image: var(--bg-image-url, none);
 }
 
-/* Additional helper classes for background images can be combined with:
-   .bg-cover, .bg-contain, .bg-auto,
-   .bg-center, .bg-top, etc.
-*/
-
 /* ======================================================
    11. BACKGROUND OVERLAYS
    - Minimal overlay classes for adding a semi-transparent layer.
@@ -173,8 +140,3 @@
 .bg-overlay-black-70 { background-color: rgba(0, 0, 0, 0.7); }
 .bg-overlay-white-50 { background-color: rgba(255, 255, 255, 0.5); }
 .bg-overlay-white-70 { background-color: rgba(255, 255, 255, 0.7); }
-
-/* 
-   Optional: For background images combined with a color overlay, you can layer:
-   .bg-image { ... } combined with an overlay element styled with .bg-overlay-*
-*/

@@ -56,27 +56,35 @@
    3. BORDER COLOR UTILITIES
 -------------------------------------------------- */
 /* Brand Colors */
-.border-color-1 {
-  border-color: var(--color-1);
+.border-color-brand {
+  border-color: var(--color-brand);
 }
-.border-color-1-light {
-  border-color: var(--color-1-light);
+.border-color-brand-light {
+  border-color: var(--color-brand-light);
 }
-.border-color-1-dark {
-  border-color: var(--color-1-dark);
-}
-
-.border-color-2 {
-  border-color: var(--color-2);
-}
-.border-color-2-light {
-  border-color: var(--color-2-light);
-}
-.border-color-2-dark {
-  border-color: var(--color-2-dark);
+.border-color-brand-dark {
+  border-color: var(--color-brand-dark);
 }
 
-/* Repeat for .border-color-3 through .border-color-11 as needed */
+.border-color-brand-2 {
+  border-color: var(--color-brand-2);
+}
+.border-color-brand-2-light {
+  border-color: var(--color-brand-2-light);
+}
+.border-color-brand-2-dark {
+  border-color: var(--color-brand-2-dark);
+}
+
+.border-color-brand-3 {
+  border-color: var(--color-brand-3);
+}
+.border-color-brand-3-light {
+  border-color: var(--color-brand-3-light);
+}
+.border-color-brand-3-dark {
+  border-color: var(--color-brand-3-dark);
+}
 
 /* Grayscale Borders */
 .border-gray-100 { border-color: var(--gray-100); }
@@ -88,6 +96,10 @@
 .border-gray-700 { border-color: var(--gray-700); }
 .border-gray-800 { border-color: var(--gray-800); }
 .border-gray-900 { border-color: var(--gray-900); }
+
+/* NEW: Border Color Utilities for White & Black */
+.border-white { border-color: var(--color-white); }
+.border-black { border-color: var(--color-black); }
 
 /* --------------------------------------------------
    4. BORDER STYLE UTILITIES
@@ -162,7 +174,7 @@
   box-shadow: 0 0 0 4px currentColor;
 }
 .ring-primary {
-  box-shadow: 0 0 0 2px var(--color-1);
+  box-shadow: 0 0 0 2px var(--color-brand);
 }
 
 /* --------------------------------------------------
@@ -191,7 +203,7 @@
   --ring-offset-color: #000;
 }
 .ring-offset-color-primary {
-  --ring-offset-color: var(--color-1);
+  --ring-offset-color: var(--color-brand);
 }
 
 /* 

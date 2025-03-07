@@ -21,8 +21,8 @@
  }
  
  /* 
-    FONT WEIGHT UTILITIES
-    - Adjust or remove weights as needed
+      FONT WEIGHT UTILITIES
+      - Adjust or remove weights as needed
  */
  .font-thin       { font-weight: 100; }
  .font-extralight { font-weight: 200; }
@@ -35,16 +35,16 @@
  .font-black      { font-weight: 900; }
  
  /* 
-    TEXT STYLE UTILITIES
-    - Quickly toggle italics
+      TEXT STYLE UTILITIES
+      - Quickly toggle italics
  */
  .italic     { font-style: italic; }
  .not-italic { font-style: normal; }
  
  /* 
-    TEXT SIZE UTILITIES
-    - Example set from .text-xs to .text-9xl 
-    - Extended to .text-10xl, .text-11xl, etc.
+      TEXT SIZE UTILITIES
+      - Example set from .text-xs to .text-9xl 
+      - Extended to .text-10xl, .text-11xl, etc.
  */
  .text-xs   { font-size: 0.75rem; }   /* ~12px */
  .text-sm   { font-size: 0.875rem; }  /* ~14px */
@@ -59,15 +59,14 @@
  .text-7xl  { font-size: 4.5rem; }    /* 72px  */
  .text-8xl  { font-size: 6rem; }      /* 96px  */
  .text-9xl  { font-size: 8rem; }      /* 128px */
- 
  /* Extended sizes (optional) */
  .text-10xl { font-size: 10rem; }     /* ~160px */
  .text-11xl { font-size: 12rem; }     /* ~192px */
  /* Add more if needed, e.g. .text-12xl, etc. */
  
  /* 
-    LINE HEIGHT UTILITIES
-    - Commonly known as "leading"
+      LINE HEIGHT UTILITIES
+      - Commonly known as "leading"
  */
  .leading-none    { line-height: 1; }
  .leading-tight   { line-height: 1.25; }
@@ -77,14 +76,14 @@
  .leading-loose   { line-height: 2; }
  
  /* 
-    TEXT TRANSFORM UTILITIES
+      TEXT TRANSFORM UTILITIES
  */
  .uppercase   { text-transform: uppercase; }
  .lowercase   { text-transform: lowercase; }
  .capitalize  { text-transform: capitalize; }
  
  /* 
-    LETTER SPACING UTILITIES
+      LETTER SPACING UTILITIES
  */
  .tracking-tighter { letter-spacing: -0.05em; }
  .tracking-tight   { letter-spacing: -0.02em; }
@@ -93,7 +92,7 @@
  .tracking-wider   { letter-spacing: 0.1em; }
  
  /* 
-    TEXT ALIGNMENT UTILITIES
+      TEXT ALIGNMENT UTILITIES
  */
  .text-left    { text-align: left; }
  .text-center  { text-align: center; }
@@ -101,31 +100,31 @@
  .text-justify { text-align: justify; }
  
  /* 
-    TEXT DECORATION UTILITIES
+      TEXT DECORATION UTILITIES
  */
  .underline      { text-decoration: underline; }
  .line-through   { text-decoration: line-through; }
  .no-underline   { text-decoration: none; }
  
  /* 
-    WHITESPACE & BREAK UTILITIES
-    - Control how text wraps or breaks
+      WHITESPACE & BREAK UTILITIES
+      - Control how text wraps or breaks
  */
  .whitespace-nowrap { white-space: nowrap; }
  .break-words       { overflow-wrap: break-word; word-wrap: break-word; }
  .break-normal      { overflow-wrap: normal; word-wrap: normal; }
  
  /* 
-    LIST STYLE UTILITIES
-    - Re-apply native list styles if needed
+      LIST STYLE UTILITIES
+      - Re-apply native list styles if needed
  */
  .list-disc    { list-style-type: disc; }
  .list-decimal { list-style-type: decimal; }
  
  /* 
-    TEXT OVERFLOW UTILITIES
-    - For truncating text with ellipsis
-    - Often used with a fixed width/width utility
+      TEXT OVERFLOW UTILITIES
+      - For truncating text with ellipsis
+      - Often used with a fixed width/width utility
  */
  .truncate {
    white-space: nowrap;
@@ -134,53 +133,20 @@
  }
  
  /* 
-    TEXT COLOR UTILITIES
-    - Using the color tokens from your variables module
-    - Example for color-1; repeat pattern for color-2 to color-11, plus grayscale if you like
+      TEXT COLOR UTILITIES
+      - Using the brand color tokens from your variables module
  */
- .text-color-1        { color: var(--color-1); }
- .text-color-1-light  { color: var(--color-1-light); }
- .text-color-1-dark   { color: var(--color-1-dark); }
-  
- .text-color-2        { color: var(--color-2); }
- .text-color-2-light  { color: var(--color-2-light); }
- .text-color-2-dark   { color: var(--color-2-dark); }
-  
- .text-color-3        { color: var(--color-3); }
- .text-color-3-light  { color: var(--color-3-light); }
- .text-color-3-dark   { color: var(--color-3-dark); }
-  
- .text-color-4        { color: var(--color-4); }
- .text-color-4-light  { color: var(--color-4-light); }
- .text-color-4-dark   { color: var(--color-4-dark); }
-  
- .text-color-5        { color: var(--color-5); }
- .text-color-5-light  { color: var(--color-5-light); }
- .text-color-5-dark   { color: var(--color-5-dark); }
-  
- .text-color-6        { color: var(--color-6); }
- .text-color-6-light  { color: var(--color-6-light); }
- .text-color-6-dark   { color: var(--color-6-dark); }
-  
- .text-color-7        { color: var(--color-7); }
- .text-color-7-light  { color: var(--color-7-light); }
- .text-color-7-dark   { color: var(--color-7-dark); }
-  
- .text-color-8        { color: var(--color-8); }
- .text-color-8-light  { color: var(--color-8-light); }
- .text-color-8-dark   { color: var(--color-8-dark); }
-  
- .text-color-9        { color: var(--color-9); }
- .text-color-9-light  { color: var(--color-9-light); }
- .text-color-9-dark   { color: var(--color-9-dark); }
-  
- .text-color-10       { color: var(--color-10); }
- .text-color-10-light { color: var(--color-10-light); }
- .text-color-10-dark  { color: var(--color-10-dark); }
-  
- .text-color-11       { color: var(--color-11); }
- .text-color-11-light { color: var(--color-11-light); }
- .text-color-11-dark  { color: var(--color-11-dark); } 
+ .text-color-brand        { color: var(--color-brand); }
+ .text-color-brand-light  { color: var(--color-brand-light); }
+ .text-color-brand-dark   { color: var(--color-brand-dark); }
+ 
+ .text-color-brand-2        { color: var(--color-brand-2); }
+ .text-color-brand-2-light  { color: var(--color-brand-2-light); }
+ .text-color-brand-2-dark   { color: var(--color-brand-2-dark); }
+ 
+ .text-color-brand-3        { color: var(--color-brand-3); }
+ .text-color-brand-3-light  { color: var(--color-brand-3-light); }
+ .text-color-brand-3-dark   { color: var(--color-brand-3-dark); }
  
  /* Grayscale text colors (optional) */
  .text-gray-100 { color: var(--gray-100); }
@@ -194,9 +160,15 @@
  .text-gray-900 { color: var(--gray-900); }
  
  /* 
-    Base body style: unopinionated default
-    Uses our sans font token. Feel free to remove or
-    adjust if you don't want a default.
+      NEW COLOR UTILITIES: White & Black
+ */
+ .text-white { color: var(--color-white); }
+ .text-black { color: var(--color-black); }
+ 
+ /* 
+      Base body style: unopinionated default
+      Uses our sans font token. Feel free to remove or
+      adjust if you don't want a default.
  */
  body {
    font-family: var(--font-sans);
