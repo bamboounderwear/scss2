@@ -1,21 +1,23 @@
 /* ------------------------------------------------ *
  * MODULE 6: GRID (Simplified Syntax)              *
  *                                                  *
- * Container: Use .grid plus a column-count class   *
- * (e.g. .grid-12) to define the overall grid.      *
+ * Container: Use .grid to define the grid. It      *
+ * defaults to a 12-column grid. (Override with     *
+ * .grid-# if necessary.)                           *
  *                                                  *
- * Child Elements: Use .col-1 to .col-12 to set the    *
- * span of each grid item. Responsive variants and   *
- * explicit span ranges are available.              *
+ * Child Elements: Use .col-1 to .col-12 or the       *
+ * responsive variants to control the span.         *
+ * Explicit span ranges are also available.         *
  * ------------------------------------------------ */
 
-/* Base grid container */
+/* Base grid container (defaults to 12 columns) */
 .grid {
   display: grid;
   gap: var(--spacing-2);
+  grid-template-columns: repeat(12, 1fr);
 }
 
-/* Grid column count utilities: set the number of columns */
+/* Optional: Grid column count utilities (if you wish to override) */
 .grid-1  { grid-template-columns: repeat(1, 1fr); }
 .grid-2  { grid-template-columns: repeat(2, 1fr); }
 .grid-3  { grid-template-columns: repeat(3, 1fr); }
@@ -29,7 +31,7 @@
 .grid-11 { grid-template-columns: repeat(11, 1fr); }
 .grid-12 { grid-template-columns: repeat(12, 1fr); }
 
-/* Child column span utilities (mobile by default) */
+/* Child column span utilities (mobile default) */
 .col-1  { grid-column: span 1; }
 .col-2  { grid-column: span 2; }
 .col-3  { grid-column: span 3; }
@@ -105,6 +107,7 @@
 }
 
 /* Span Range Utilities for precise control */
+/* (Requires a CSS preprocessor like Sass for the loops) */
 @for $start from 1 through 11 {
   @for $end from ($start + 1) through 12 {
     .span-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
