@@ -10,46 +10,30 @@
 </head>
 <body>
 
-<!-- Header / Navigation Component -->
-<header class="p-4">
-    <nav class="flex items-center justify-between">
-      <div class="logo">
-        <a href="#">Brand</a>
-      </div>
-      <ul class="flex space-x-4">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+  <header class="relative h-3/4 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/8657665/pexels-photo-8657665.jpeg');">
+    <!-- Responsive Transparent Navbar -->
+    <nav class="absolute top-0 left-0 w-full flex items-center justify-between p-4">
+      <div class="font-bold text-xl">Brand</div>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-4">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Services</a></li>
+        <li><a href="#" class="hover:underline">Contact</a></li>
       </ul>
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden p-2">
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+      </button>
     </nav>
+  
+    <!-- Hero Content -->
+    <div class="flex items-center justify-center h-full">
+      <h1 class="text-5xl font-bold text-white">Welcome to Our Site</h1>
+    </div>
   </header>
-
-  <!-- Hero Section -->
-<section class="relative p-8">
-    <div class="container">
-      <h1 class="text-6xl font-bold mb-4">Hero Title</h1>
-      <p class="mb-4">A short description to support your hero title.</p>
-      <a href="#" class="inline-block p-2 border rounded">Call to Action</a>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="grid gap-4">
-      <div class="lg:col-6 md:col-6 sm:col-12">
-        <p>This is the left column text. Replace with your content.</p>
-      </div>
-      <div class="lg:col-6 md:col-6 sm:col-12">
-        <p>This is the right column text. Replace with your content.</p>
-      </div>
-    </div>
-  </div>  
-  
-  
-  <!-- Footer Component -->
-<footer class="p-4 text-center">
-    <p>&copy; 2025 Your Company</p>
-  </footer>  
   
 
 </body>
