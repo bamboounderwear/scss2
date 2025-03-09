@@ -1,15 +1,24 @@
 {
-  "name": "utility-first-css-framework",
+  "name": "v2-sass-customized-design-system",
   "version": "1.0.0",
-  "description": "A minimal utility-first CSS framework using design tokens and modular SCSS.",
-  "scripts": {
-  "clean": "rm -rf css",
-  "build": "sass --style=compressed scss/main.scss css/main.css",
-  "watch": "sass --watch scss/main.scss:css/main.css --style=compressed"
-},
-  "author": "",
   "license": "MIT",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "build": "mkdir -p css && sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules/@picocss/pico/scss/ scss/:css/",
+    "dev": "npm run build && serve",
+    "start": "npm run dev"
+  },
   "devDependencies": {
-    "sass": "^1.85.1"
-  }
+    "@picocss/pico": "2.0.6",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.71.1",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
