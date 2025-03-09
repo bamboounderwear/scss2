@@ -2,39 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Utility-First CSS Framework – Style Guide & Cheat Sheet</title>
+  <title>Navbar Components</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4 space-y-8">
+    <h1 class="text-3xl font-bold mb-6">Navbar Components</h1>
 
-  <header class="relative h-3/4 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/8657665/pexels-photo-8657665.jpeg');">
-    <!-- Responsive Transparent Navbar -->
-    <nav class="absolute top-0 left-0 w-full flex items-center justify-between p-4">
-      <div class="font-bold text-xl">Brand</div>
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex space-x-4">
-        <li><a href="#" class="hover:underline">Home</a></li>
-        <li><a href="#" class="hover:underline">About</a></li>
-        <li><a href="#" class="hover:underline">Services</a></li>
-        <li><a href="#" class="hover:underline">Contact</a></li>
-      </ul>
-      <!-- Mobile Menu Toggle -->
-      <button class="md:hidden p-2">
-        <span class="block w-6 h-0.5 bg-white mb-1"></span>
-        <span class="block w-6 h-0.5 bg-white mb-1"></span>
-        <span class="block w-6 h-0.5 bg-white"></span>
-      </button>
-    </nav>
-  
-    <!-- Hero Content -->
-    <div class="flex items-center justify-center h-full">
-      <h1 class="text-5xl font-bold text-white">Welcome to Our Site</h1>
-    </div>
-  </header>
-  
+    <!-- Navbar 1: Simple Centered with Brand -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">1. Simple Centered with Brand</h2>
+      <nav class="bg-white shadow-md rounded-lg">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between h-16">
+            <div class="text-2xl font-bold text-color-brand">Brand</div>
+            <div class="hidden md:flex space-x-8">
+              <a href="#" class="text-gray-600 hover:text-color-brand transition-all">Home</a>
+              <a href="#" class="text-gray-600 hover:text-color-brand transition-all">About</a>
+              <a href="#" class="text-gray-600 hover:text-color-brand transition-all">Services</a>
+              <a href="#" class="text-gray-600 hover:text-color-brand transition-all">Contact</a>
+            </div>
+            <button class="md:hidden">
+              <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+              <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+              <span class="block w-6 h-0.5 bg-gray-600"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </section>
 
+    <!-- Navbar 2: Split with Actions -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">2. Split with Actions</h2>
+      <nav class="bg-color-brand-dark text-white rounded-lg">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center space-x-8">
+              <div class="text-2xl font-bold">Logo</div>
+              <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-color-brand-2-light transition-all">Products</a>
+                <a href="#" class="hover:text-color-brand-2-light transition-all">Features</a>
+                <a href="#" class="hover:text-color-brand-2-light transition-all">Pricing</a>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+              <a href="#" class="px-4 py-2 rounded-md hover:bg-color-brand transition-all">Sign In</a>
+              <a href="#" class="px-4 py-2 bg-color-brand-2 rounded-md hover:bg-color-brand-2-light transition-all">Sign Up</a>
+            </div>
+            <button class="md:hidden">
+              <span class="block w-6 h-0.5 bg-white mb-1"></span>
+              <span class="block w-6 h-0.5 bg-white mb-1"></span>
+              <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Navbar 3: Three-Column Layout -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">3. Three-Column Layout</h2>
+      <nav class="bg-gray-800 text-white rounded-lg">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between h-16">
+            <!-- Left Section -->
+            <div class="flex items-center space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white transition-all">
+                <span class="text-xl">🏠</span>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-all">
+                <span class="text-xl">📱</span>
+              </a>
+            </div>
+            
+            <!-- Center Section -->
+            <div class="hidden md:flex items-center space-x-1">
+              <a href="#" class="px-3 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Dashboard</a>
+              <a href="#" class="px-3 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Team</a>
+              <a href="#" class="px-3 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Projects</a>
+              <a href="#" class="px-3 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Calendar</a>
+            </div>
+            
+            <!-- Right Section -->
+            <div class="flex items-center space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white transition-all">
+                <span class="text-xl">🔔</span>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-all">
+                <span class="text-xl">👤</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </div>
 </body>
 </html>
